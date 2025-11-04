@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html#scope",
+    "href": "index.html#scope",
+    "title": "Group Project",
+    "section": "Scope",
+    "text": "Scope\n\nFinding a Marketing related problem\nUnderstanding the methodology of the analysis\nCreate a product using microservice architecture:\n\nPredictive Model (component)\nDB\nData Processing pipeline (if needed)\nBackend\nFrontend (only for the groups with 5 members)\n\nAdd documentation"
+  },
+  {
+    "objectID": "index.html#team",
+    "href": "index.html#team",
+    "title": "Group Project",
+    "section": "Team",
+    "text": "Team\n\nProduct Manager: team sync, product research\nDB Developer: responsible for the database development\nData Scientist/Analyst: responsible for Modeling and EDA\nBackend Developer: responsible for the API\nFrontend Developer: responsible for the layout of the product\n\n\nI will be the Project Manager"
+  },
+  {
+    "objectID": "index.html#flow",
+    "href": "index.html#flow",
+    "title": "Group Project",
+    "section": "Flow",
+    "text": "Flow"
+  },
+  {
+    "objectID": "index.html#architecture",
+    "href": "index.html#architecture",
+    "title": "Group Project",
+    "section": "Architecture",
+    "text": "Architecture"
+  },
+  {
+    "objectID": "index.html#teamwork",
+    "href": "index.html#teamwork",
+    "title": "Group Project",
+    "section": "Teamwork",
+    "text": "Teamwork\n“If you want to go fast, go alone. If you want to go far, go together.”\n\n\nTeamwork"
+  },
+  {
+    "objectID": "index.html#responsibilities",
+    "href": "index.html#responsibilities",
+    "title": "Group Project",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nProduct Manager is responsible for the product roadmap.\n\nDefine a product\nDefine MVP\nManage Stakeholders:\n\nCommunicate with me and Artur\nTeam Sync\n\nFollow-up tasks\nBuild low fidelity mockup (expand the above flowchart)"
+  },
+  {
+    "objectID": "index.html#tools",
+    "href": "index.html#tools",
+    "title": "Group Project",
+    "section": "Tools",
+    "text": "Tools\nYou are going to use Github Projects. Throughout the lectures/sessions you will learn more."
+  },
+  {
+    "objectID": "index.html#prioritization",
+    "href": "index.html#prioritization",
+    "title": "Group Project",
+    "section": "Prioritization",
+    "text": "Prioritization"
+  },
+  {
+    "objectID": "index.html#moscow",
+    "href": "index.html#moscow",
+    "title": "Group Project",
+    "section": "MoSCoW",
+    "text": "MoSCoW"
+  },
+  {
+    "objectID": "index.html#mvp",
+    "href": "index.html#mvp",
+    "title": "Group Project",
+    "section": "MVP",
+    "text": "MVP"
+  },
+  {
+    "objectID": "index.html#roadmap-1",
+    "href": "index.html#roadmap-1",
+    "title": "Group Project",
+    "section": "Roadmap",
+    "text": "Roadmap\nProject starts on and ends on Thus, we have a little bit more than a months to complete the project."
+  },
+  {
+    "objectID": "index.html#tasks",
+    "href": "index.html#tasks",
+    "title": "Group Project",
+    "section": "Tasks",
+    "text": "Tasks\nAfter building the roadmap, teams should break down each block into tasks.\nFor the sake of simplicity, we can use the following flow:\n\\[{Backlog \\rightarrow WIP \\rightarrow Review \\rightarrow Done}\\]\n\nBacklog: filling in all the tasks according to the roadmap\nWIP: work in process:\n\nFollowing up the status of the tasks\nDiscuss in the comments in case of issues. Feel free to add me and/or Garo in the discussion.\n\nReview: checking whether the task is completed correctly\nDone"
+  },
+  {
+    "objectID": "index.html#responsibilities-1",
+    "href": "index.html#responsibilities-1",
+    "title": "Group Project",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nThe Database Developer is responsible for:\n\ndesigning database\nbuilding the tables\ncreate functionality to interact with Python(CRUD and not only )"
+  },
+  {
+    "objectID": "index.html#responsibilities-2",
+    "href": "index.html#responsibilities-2",
+    "title": "Group Project",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nA Backend Developer is responsible to develop multiple endpoints according to the business logic. Our recommendation is to use FastAPI:\n\nit is really fast!\nthe easiest one to learn\nhas integrated swagger (API documentation)\ncritical for Data Scientists, as it enables them to build and deploy end-to-end data science applications"
+  },
+  {
+    "objectID": "index.html#responsibilities-3",
+    "href": "index.html#responsibilities-3",
+    "title": "Group Project",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nThe Front-End Developer will be responsible for building a user-friendly interface for presenting the results and insights by collaborating with other team members (such as the data scientist, Backend developer, and database developer) to integrate data models, APIs, and visualizations into a cohesive, interactive web application."
+  },
+  {
+    "objectID": "index.html#why-streamlit",
+    "href": "index.html#why-streamlit",
+    "title": "Group Project",
+    "section": "Why Streamlit?",
+    "text": "Why Streamlit?\n\nQuick Development: Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.\nNo Need for Front-End Knowledge: developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.\nReal-Time Interaction: supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).\nVisualization Support: works seamlessly with popular data visualization libraries such as Matplotlib, Seaborn, and Plotly, which can be useful for displaying complex marketing analytics results like clustering or survival analysis"
+  },
+  {
+    "objectID": "index.html#responsibilities-4",
+    "href": "index.html#responsibilities-4",
+    "title": "Group Project",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nA data professional is responsible for the pipeline of predictive and/or analytical parts.\nData Scientist should provide below objects:\n\nData generation\nModel building\nModel(s) evaluation\nPerformance metric"
+  },
+  {
+    "objectID": "index.html#construct-groups",
+    "href": "index.html#construct-groups",
+    "title": "Group Project",
+    "section": "Construct Groups",
+    "text": "Construct Groups\nConsidering the complexity of a group project, we must start doing it as soon as possible! (not until the 1st of November!)"
+  },
+  {
+    "objectID": "index.html#milestones-1",
+    "href": "index.html#milestones-1",
+    "title": "Group Project",
+    "section": "Milestones",
+    "text": "Milestones\nWe are going to have 4 graded milestones to complete the project.\nGroup Project Grade will be allocated to milestones, with the below weights:"
+  },
+  {
+    "objectID": "index.html#milestone-1-1-nov---8-nov",
+    "href": "index.html#milestone-1-1-nov---8-nov",
+    "title": "Group Project",
+    "section": "Milestone 1 | 1 Nov - 8 Nov",
+    "text": "Milestone 1 | 1 Nov - 8 Nov\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind you Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze > requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
+  }
+]
