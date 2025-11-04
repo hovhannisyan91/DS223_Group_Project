@@ -15,6 +15,7 @@ format:
     favicon: img/auaicon.ico
     logo: img/auaicon.ico
     fig-align: center
+    css: styles.css
     include-in-header:
       - text: |
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

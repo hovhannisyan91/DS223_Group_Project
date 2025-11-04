@@ -50,7 +50,7 @@ date: last-modified
 <!-- todo add PAUSE here -->
 
 
-![Teamwork](img/group_project.jpg)
+![](img/group_project.jpg)
 
 #   Product Manager
 
