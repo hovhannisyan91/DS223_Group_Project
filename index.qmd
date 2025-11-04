@@ -112,7 +112,7 @@ $${Backlog \rightarrow WIP \rightarrow Review \rightarrow Done}$$
 1. **Backlog:** filling in  all the tasks according to the roadmap
 2. **WIP:** work in process:
     + Following up the status of the tasks
-    + Discuss in the comments in case of issues. Feel free to add me and/or Garo in the discussion.
+    + Discuss in the comments in case of issues. Feel free to add me and/or Artur in the discussion.
 3. **Review:** checking whether the task is completed correctly
 4. **Done**
  
