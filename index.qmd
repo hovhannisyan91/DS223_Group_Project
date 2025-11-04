@@ -65,14 +65,14 @@ date: last-modified
     - Team Sync
 4. Follow-up tasks
 5. Build low fidelity mockup (expand the above flowchart) 
+6. Manage `pull requests`
 
 
 ## Tools
 
 
-You are going to use *Github Projects*. Throughout the lectures/sessions you will learn more.
+You are going to use  *Github Projects*. Throughout the lectures/sessions you will learn more.
  
-
 
 ## Prioritization
 
@@ -84,8 +84,6 @@ You are going to use *Github Projects*. Throughout the lectures/sessions you wil
 ![](img/MoSCoW.png){width=100%}
 
 ## MVP
-
-
 
 ::: {.r-fit-text style="text-align:center;"}
 <img src="img/correct_mvp.png" style="width:100%; height:100%; object-fit:cover; margin:0; padding:0;">
@@ -187,16 +185,16 @@ We are going to have 4 **graded** milestones to complete the project.
 Group Project Grade will be allocated to milestones, with the below weights:
 
 
-![](img/Milestones.png)
+![](img/milestones.png)
 
 ## Milestone 1 | 1 Nov - 8 Nov {.smaller}
 
 1. Problem Definition (you can learn more about it  [here](https://docs.google.com/document/d/1uUp4Kpduj768tGjAxXGiGrUesQiYIenQoSLlVpRHqpA/edit?usp=drive_link))
 2. Finalizing roles [here](https://docs.google.com/spreadsheets/d/1TyMjzzwjN9CZi7VKYZqxUSrDiOfUeaLpuWlcDpUZ8jk/edit#gid=0)
 3. Schedule a call/meeting with me and Artur
-4. Find you Repository and join
+4. Find your Repository and join
 5. Create a product roadmap and prioritized functionality (items)
-6. Create a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)
+6. Create a virtual environment in above repo and generate `requirements.txt` (venv must be ingnored in git)
     - **create venv:** `python -m venv venv`
     - **activate:** `source env/bin/activate`
     - **install:** `fastapi`

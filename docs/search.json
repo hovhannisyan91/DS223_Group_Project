@@ -39,7 +39,7 @@
     "href": "index.html#responsibilities",
     "title": "Group Project",
     "section": "Responsibilities",
-    "text": "Responsibilities\nProduct Manager is responsible for the product roadmap.\n\nDefine a product\nDefine MVP\nManage Stakeholders:\n\nCommunicate with me and Artur\nTeam Sync\n\nFollow-up tasks\nBuild low fidelity mockup (expand the above flowchart)"
+    "text": "Responsibilities\nProduct Manager is responsible for the product roadmap.\n\nDefine a product\nDefine MVP\nManage Stakeholders:\n\nCommunicate with me and Artur\nTeam Sync\n\nFollow-up tasks\nBuild low fidelity mockup (expand the above flowchart)\nManage pull requests"
   },
   {
     "objectID": "index.html#tools",
@@ -81,7 +81,7 @@
     "href": "index.html#tasks",
     "title": "Group Project",
     "section": "Tasks",
-    "text": "Tasks\nAfter building the roadmap, teams should break down each block into tasks.\nFor the sake of simplicity, we can use the following flow:\n\\[{Backlog \\rightarrow WIP \\rightarrow Review \\rightarrow Done}\\]\n\nBacklog: filling in all the tasks according to the roadmap\nWIP: work in process:\n\nFollowing up the status of the tasks\nDiscuss in the comments in case of issues. Feel free to add me and/or Garo in the discussion.\n\nReview: checking whether the task is completed correctly\nDone"
+    "text": "Tasks\nAfter building the roadmap, teams should break down each block into tasks.\nFor the sake of simplicity, we can use the following flow:\n\\[{Backlog \\rightarrow WIP \\rightarrow Review \\rightarrow Done}\\]\n\nBacklog: filling in all the tasks according to the roadmap\nWIP: work in process:\n\nFollowing up the status of the tasks\nDiscuss in the comments in case of issues. Feel free to add me and/or Artur in the discussion.\n\nReview: checking whether the task is completed correctly\nDone"
   },
   {
     "objectID": "index.html#responsibilities-1",
@@ -137,6 +137,6 @@
     "href": "index.html#milestone-1-1-nov---8-nov",
     "title": "Group Project",
     "section": "Milestone 1 | 1 Nov - 8 Nov",
-    "text": "Milestone 1 | 1 Nov - 8 Nov\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind you Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze > requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
+    "text": "Milestone 1 | 1 Nov - 8 Nov\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze > requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
   }
 ]
