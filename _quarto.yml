@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: docs
+  
+format:
+  revealjs: 
+    touch: true
+    slide-number: false
+    chalkboard: true
+    embed-resources: false
+    # footer: "<a href=\"../index.html\">Back to section</a>"
+    preview-links: auto
+    width: 1500
+    transition: slide
+    favicon: img/auaicon.ico
+    logo: img/auaicon.ico
+    fig-align: center
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+          <style>
+            .icon-xxl { font-size: 84px; }
+            .icon-xl  { font-size: 64px; }
+            .icon-lg  { font-size: 48px; }
+            .muted { opacity: .8 }
+            .pill { border-radius: 10px; }
+            .circle { border-radius: 50%; }
+          </style>
+  
+
+
+
