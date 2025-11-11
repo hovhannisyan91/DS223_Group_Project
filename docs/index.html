@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Karen Hovhannisyan">
-  <meta name="dcterms.date" content="2025-11-04">
+  <meta name="dcterms.date" content="2025-11-11">
   <title>Group Project</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="styles.css">
@@ -150,7 +216,7 @@ Karen Hovhannisyan
 </div>
 </div>
 
-  <p class="date">2025-11-04</p>
+  <p class="date">2025-11-11</p>
 </section>
 <section>
 <section id="group-project" class="title-slide slide level1 center">
@@ -365,6 +431,118 @@ Karen Hovhannisyan
 <li>Create a private Slack channel in our Workspace and name it <strong>Group {number}</strong></li>
 <li>Install VsCode (also install Project Manager extension)</li>
 </ol>
+</section></section>
+<section>
+<section id="environment" class="title-slide slide level1 center">
+<h1>Environment</h1>
+
+</section>
+<section id="objective" class="slide level2">
+<h2>Objective</h2>
+<ul>
+<li><strong>Docker:</strong> intuition<br>
+</li>
+<li>Schema Design<br>
+</li>
+<li>Data Generation<br>
+</li>
+<li>Data Ingestion</li>
+</ul>
+</section>
+<section id="dockerized-environment-1" class="slide level2">
+<h2>Dockerized Environment: 1</h2>
+<p><img data-src="img/docker_1.jpg" class="plain" height="500"></p>
+</section>
+<section id="dockerized-environment-2" class="slide level2">
+<h2>Dockerized Environment: 2</h2>
+<p><img data-src="img/docker_2.jpg" class="plain" height="500"></p>
+</section>
+<section id="dockerized-environment-3" class="slide level2">
+<h2>Dockerized Environment: 3</h2>
+<p><img data-src="img/docker_3.jpg" class="plain" height="500"></p>
+</section>
+<section id="dockerized-environment-4" class="slide level2">
+<h2>Dockerized Environment: 4</h2>
+<p><img data-src="img/docker_4.jpg" class="plain" height="500"></p>
+</section>
+<section id="dockerized-environment-5" class="slide level2">
+<h2>Dockerized Environment: 5</h2>
+<p><img data-src="img/docker_5.jpg" class="plain" height="500"></p>
+</section>
+<section id="dockerized-environment-we-need" class="slide level2">
+<h2>Dockerized Environment: We Need</h2>
+<p><img data-src="img/docker_6.jpg" class="plain" height="500"></p>
+</section>
+<section id="for-today" class="slide level2">
+<h2>For Today…</h2>
+<p><img data-src="img/docker_0.jpg" class="plain" height="500"></p>
+</section>
+<section id="docker-files" class="slide level2 smaller">
+<h2>Docker Files</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="at">FROM python:3.10-slim-bullseye</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a><span class="at">RUN apt-get update &amp;&amp; apt-get install -y \</span></span>
+<span id="cb1-4"><a></a><span class="at">    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \</span></span>
+<span id="cb1-5"><a></a><span class="at">    libblas-dev liblapack-dev gfortran \</span></span>
+<span id="cb1-6"><a></a><span class="at">    </span><span class="ot">&amp;&amp;</span><span class="at"> rm -rf /var/lib/apt/lists/*</span></span>
+<span id="cb1-7"><a></a></span>
+<span id="cb1-8"><a></a><span class="co"># Set working directory</span></span>
+<span id="cb1-9"><a></a><span class="at">WORKDIR /etl</span></span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a><span class="co"># Copy requirements file and install dependencies</span></span>
+<span id="cb1-12"><a></a><span class="at">COPY requirements.txt requirements.txt </span></span>
+<span id="cb1-13"><a></a><span class="at">RUN pip3 install --upgrade pip</span></span>
+<span id="cb1-14"><a></a><span class="at">RUN pip3 install -r requirements.txt</span></span>
+<span id="cb1-15"><a></a></span>
+<span id="cb1-16"><a></a><span class="co"># Copy the rest of the application code</span></span>
+<span id="cb1-17"><a></a><span class="at">COPY . .</span></span>
+<span id="cb1-18"><a></a></span>
+<span id="cb1-19"><a></a><span class="co"># Expose port 3000</span></span>
+<span id="cb1-20"><a></a><span class="at">EXPOSE 3000</span></span>
+<span id="cb1-21"><a></a></span>
+<span id="cb1-22"><a></a><span class="co"># Command to run the python file</span></span>
+<span id="cb1-23"><a></a><span class="at">CMD ["python", "etl.py"]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="docker-files-1" class="slide level2 smaller">
+<h2>Docker-Files</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb2-2"><a></a><span class="at">    </span><span class="fu">db</span><span class="kw">:</span></span>
+<span id="cb2-3"><a></a><span class="at">        </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgresql_db</span></span>
+<span id="cb2-4"><a></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgres</span></span>
+<span id="cb2-5"><a></a><span class="at">        </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> always</span></span>
+<span id="cb2-6"><a></a><span class="at">        </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-7"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> 5432:5432</span></span>
+<span id="cb2-8"><a></a><span class="at">        </span><span class="fu">environment</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-9"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> POSTGRES_USER=${DB_USER}</span></span>
+<span id="cb2-10"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> POSTGRES_PASSWORD=${DB_PASSWORD}</span></span>
+<span id="cb2-11"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> POSTGRES_DB=${DB_NAME}</span></span>
+<span id="cb2-12"><a></a><span class="at">        </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-13"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> ./postgres_data:/var/lib/postgresql/data</span><span class="co"> #persisting data                           </span></span>
+<span id="cb2-14"><a></a><span class="at">    </span><span class="fu">pgadmin</span><span class="kw">:</span><span class="at">  </span></span>
+<span id="cb2-15"><a></a><span class="at">        </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> pgadmin</span></span>
+<span id="cb2-16"><a></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> dpage/pgadmin4</span></span>
+<span id="cb2-17"><a></a><span class="at">        </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb2-18"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}</span></span>
+<span id="cb2-19"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}</span></span>
+<span id="cb2-20"><a></a><span class="at">        </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-21"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> 5050:80</span><span class="co"> # for local browser (80 is the default port of the browsed)</span></span>
+<span id="cb2-22"><a></a><span class="at">        </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-23"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> ./pgadmin_data:/var/lib/pgadmin</span><span class="co">  # Persisting pgAdmin configuration and sessions</span></span>
+<span id="cb2-24"><a></a><span class="at">        </span><span class="fu">depends_on</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-25"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> db</span></span>
+<span id="cb2-26"><a></a><span class="at">    </span><span class="fu">etl</span><span class="kw">:</span></span>
+<span id="cb2-27"><a></a><span class="at">        </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> etl</span></span>
+<span id="cb2-28"><a></a><span class="at">        </span><span class="fu">build</span><span class="kw">:</span><span class="at"> ./etl</span></span>
+<span id="cb2-29"><a></a><span class="at">        </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-30"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> 3000:3000</span></span>
+<span id="cb2-31"><a></a><span class="at">        </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb2-32"><a></a><span class="at">            </span><span class="kw">-</span><span class="at"> ./etl:/etl</span></span>
+<span id="cb2-33"><a></a><span class="at">        </span><span class="fu">depends_on</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-34"><a></a><span class="at">        </span><span class="kw">-</span><span class="at"> db</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="execution" class="slide level2">
+<h2>Execution</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="at">docker-compose up</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <!-- ## Milestone 2 | 25Mar-06Apr -->
 <!-- 1. Decide the endpoints (the actions that your product is going to include) -->
 <!-- 1. DB developer: Design the database using Star or any other schema (provide ERD) -->

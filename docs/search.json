@@ -138,5 +138,82 @@
     "title": "Group Project",
     "section": "Milestone 1 | 1 Nov - 8 Nov",
     "text": "Milestone 1 | 1 Nov - 8 Nov\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze &gt; requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
+  },
+  {
+    "objectID": "index.html#objective",
+    "href": "index.html#objective",
+    "title": "Group Project",
+    "section": "Objective",
+    "text": "Objective\n\nDocker: intuition\n\nSchema Design\n\nData Generation\n\nData Ingestion"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-1",
+    "href": "index.html#dockerized-environment-1",
+    "title": "Group Project",
+    "section": "Dockerized Environment: 1",
+    "text": "Dockerized Environment: 1"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-2",
+    "href": "index.html#dockerized-environment-2",
+    "title": "Group Project",
+    "section": "Dockerized Environment: 2",
+    "text": "Dockerized Environment: 2"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-3",
+    "href": "index.html#dockerized-environment-3",
+    "title": "Group Project",
+    "section": "Dockerized Environment: 3",
+    "text": "Dockerized Environment: 3"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-4",
+    "href": "index.html#dockerized-environment-4",
+    "title": "Group Project",
+    "section": "Dockerized Environment: 4",
+    "text": "Dockerized Environment: 4"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-5",
+    "href": "index.html#dockerized-environment-5",
+    "title": "Group Project",
+    "section": "Dockerized Environment: 5",
+    "text": "Dockerized Environment: 5"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-we-need",
+    "href": "index.html#dockerized-environment-we-need",
+    "title": "Group Project",
+    "section": "Dockerized Environment: We Need",
+    "text": "Dockerized Environment: We Need"
+  },
+  {
+    "objectID": "index.html#for-today",
+    "href": "index.html#for-today",
+    "title": "Group Project",
+    "section": "For Today…",
+    "text": "For Today…"
+  },
+  {
+    "objectID": "index.html#docker-files",
+    "href": "index.html#docker-files",
+    "title": "Group Project",
+    "section": "Docker Files",
+    "text": "Docker Files\nFROM python:3.10-slim-bullseye\n\nRUN apt-get update && apt-get install -y \\\n    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \\\n    libblas-dev liblapack-dev gfortran \\\n    && rm -rf /var/lib/apt/lists/*\n\n# Set working directory\nWORKDIR /etl\n\n# Copy requirements file and install dependencies\nCOPY requirements.txt requirements.txt \nRUN pip3 install --upgrade pip\nRUN pip3 install -r requirements.txt\n\n# Copy the rest of the application code\nCOPY . .\n\n# Expose port 3000\nEXPOSE 3000\n\n# Command to run the python file\nCMD [\"python\", \"etl.py\"]"
+  },
+  {
+    "objectID": "index.html#docker-files-1",
+    "href": "index.html#docker-files-1",
+    "title": "Group Project",
+    "section": "Docker-Files",
+    "text": "Docker-Files\nservices:\n    db:\n        container_name: postgresql_db\n        image: postgres\n        restart: always\n        ports:\n        - 5432:5432\n        environment: \n        - POSTGRES_USER=${DB_USER}\n        - POSTGRES_PASSWORD=${DB_PASSWORD}\n        - POSTGRES_DB=${DB_NAME}\n        volumes:\n        - ./postgres_data:/var/lib/postgresql/data #persisting data                           \n    pgadmin:  \n        container_name: pgadmin\n        image: dpage/pgadmin4\n        environment:\n        - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}\n        - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}\n        ports:\n        - 5050:80 # for local browser (80 is the default port of the browsed)\n        volumes:\n        - ./pgadmin_data:/var/lib/pgadmin  # Persisting pgAdmin configuration and sessions\n        depends_on: \n        - db\n    etl:\n        container_name: etl\n        build: ./etl\n        ports:\n        - 3000:3000\n        volumes:\n            - ./etl:/etl\n        depends_on: \n        - db"
+  },
+  {
+    "objectID": "index.html#execution",
+    "href": "index.html#execution",
+    "title": "Group Project",
+    "section": "Execution",
+    "text": "Execution\ndocker-compose up"
   }
 ]
