@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+github_project_manager
+
 # Distribution / packaging
 .Python
 build/
