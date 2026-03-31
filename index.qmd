@@ -23,19 +23,18 @@ date: last-modified
 
 ## Team
 
-- **Product Manager:** team sync, product research
+- **Product/Project Manager:** team sync, product research
 - **DB Developer:** responsible for the database development
 - **Data Scientist/Analyst:** responsible for Modeling and EDA
 - **Backend Developer:** responsible for the API
 - **Frontend Developer:** responsible for the layout of the product
 
->I will be the Project Manager
+>I will be the requestor
 
 ## Flow
 
 
 ![](img/schema.jpeg)
-
 
 
 
@@ -187,7 +186,7 @@ Group Project Grade will be allocated to milestones, with the below weights:
 
 ![](img/milestones.png)
 
-## Milestone 1 | 1 Nov - 8 Nov {.smaller}
+## Milestone 1 | 1 Apr - Apr 10 {.smaller}
 
 1. Problem Definition (you can learn more about it  [here](https://docs.google.com/document/d/1uUp4Kpduj768tGjAxXGiGrUesQiYIenQoSLlVpRHqpA/edit?usp=drive_link))
 2. Finalizing roles [here](https://docs.google.com/spreadsheets/d/1TyMjzzwjN9CZi7VKYZqxUSrDiOfUeaLpuWlcDpUZ8jk/edit#gid=0)
@@ -201,7 +200,7 @@ Group Project Grade will be allocated to milestones, with the below weights:
     - **create the `requirements.txt` file:** `pip freeze > requirements.txt`
     - deactivate: `deactivate`
 7. Push *point 1, point 4, point 6 (requirements.txt).*
-8. Prototype the UI using *Figma* or other similar tool
+8. Prototype/Flowchart the UI using *Figma* or other similar tool
 9. Create a private Slack channel in our Workspace and name it **Group {number}**
 10. Install VsCode (also install Project Manager extension)
 
@@ -334,7 +333,20 @@ docker-compose up
 ```
 
 
-<!-- ## Milestone 2 | 25Mar-06Apr -->
+# Milestone 2
+
+
+## Switch to M2 branch
+
+```{bash}
+git checkout -b m2
+```
+
+```{bash}
+git pull
+```
+
+## 
 
 <!-- 1. Decide the endpoints (the actions that your product is going to include) -->
 <!-- 1. DB developer: Design the database using Star or any other schema (provide ERD) -->
@@ -362,3 +374,4 @@ docker-compose up
 
 <!-- 7. Complete the third chapter of   [\textcolor{blue}{Developing Python Packages}](https://app.datacamp.com/learn/courses/developing-python-packages) -->
 <!-- 6. Finish documentation -->
+

@@ -11,7 +11,7 @@
     "href": "index.html#team",
     "title": "Group Project",
     "section": "Team",
-    "text": "Team\n\nProduct Manager: team sync, product research\nDB Developer: responsible for the database development\nData Scientist/Analyst: responsible for Modeling and EDA\nBackend Developer: responsible for the API\nFrontend Developer: responsible for the layout of the product\n\n\nI will be the Project Manager"
+    "text": "Team\n\nProduct/Project Manager: team sync, product research\nDB Developer: responsible for the database development\nData Scientist/Analyst: responsible for Modeling and EDA\nBackend Developer: responsible for the API\nFrontend Developer: responsible for the layout of the product\n\n\nI will be the requestor"
   },
   {
     "objectID": "index.html#flow",
@@ -133,11 +133,11 @@
     "text": "Milestones\nWe are going to have 4 graded milestones to complete the project.\nGroup Project Grade will be allocated to milestones, with the below weights:"
   },
   {
-    "objectID": "index.html#milestone-1-1-nov---8-nov",
-    "href": "index.html#milestone-1-1-nov---8-nov",
+    "objectID": "index.html#milestone-1-1-apr---apr-10",
+    "href": "index.html#milestone-1-1-apr---apr-10",
     "title": "Group Project",
-    "section": "Milestone 1 | 1 Nov - 8 Nov",
-    "text": "Milestone 1 | 1 Nov - 8 Nov\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze &gt; requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
+    "section": "Milestone 1 | 1 Apr - Apr 10",
+    "text": "Milestone 1 | 1 Apr - Apr 10\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze &gt; requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype/Flowchart the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
   },
   {
     "objectID": "index.html#objective",
@@ -215,5 +215,75 @@
     "title": "Group Project",
     "section": "Execution",
     "text": "Execution\ndocker-compose up"
+  },
+  {
+    "objectID": "index.html#switch-to-m2-branch",
+    "href": "index.html#switch-to-m2-branch",
+    "title": "Group Project",
+    "section": "Switch to M2 branch",
+    "text": "Switch to M2 branch\ngit checkout -b m2\ngit pull"
+  },
+  {
+    "objectID": "github_project_manager/milestones/m2.html#product-and-project-manager-20-points",
+    "href": "github_project_manager/milestones/m2.html#product-and-project-manager-20-points",
+    "title": "",
+    "section": "Product and Project Manager | 20 points",
+    "text": "Product and Project Manager | 20 points\n\nInstall mkdocs package to start with the documentation (PSS will be available)\nDatabase schema: Provide your product database structure (ERD)\nTransform your project file structure according to the suggested format\ncheck all the team activities from your team and merge everything\nHandle the pull requests from your team members and delete the branches after merging"
+  },
+  {
+    "objectID": "github_project_manager/milestones/m2.html#database-developer-20-points",
+    "href": "github_project_manager/milestones/m2.html#database-developer-20-points",
+    "title": "",
+    "section": "Database Developer | 20 points",
+    "text": "Database Developer | 20 points\n\nCreate a new git branch and name it db.\nCreate a new service/container and name it db.\nCreate a DB and respective tables suggested by the Product Manager.\nConnect to SQL with Python.\nPush data from flat files to the DB.\nAdd extra methods that you might need throughout the project.\nPush your work to the respective branch.\nCreate a pull request for the Product Manager."
+  },
+  {
+    "objectID": "github_project_manager/milestones/m2.html#data-scientist-and-data-analyst-20-points",
+    "href": "github_project_manager/milestones/m2.html#data-scientist-and-data-analyst-20-points",
+    "title": "",
+    "section": "Data Scientist and Data Analyst | 20 points",
+    "text": "Data Scientist and Data Analyst | 20 points\n\nCreate a new git branch and name it ds.\nCreate a new service/container and name it ds.\nSimulate the data if you need.\nTry to use the CRUD functionality done by the DB Developer.\nWork on the modeling part using simple models, conduct extra research.\nPush your work to the respective branch.\nCreate a pull request for the Product Manager."
+  },
+  {
+    "objectID": "github_project_manager/milestones/m2.html#backend-developer-20-points",
+    "href": "github_project_manager/milestones/m2.html#backend-developer-20-points",
+    "title": "",
+    "section": "Backend Developer | 20 points",
+    "text": "Backend Developer | 20 points\n\nCreate a new git branch and name it back.\nCreate a new service/container and name it back.\nCommunicate with the DB Developer and PM in order to design the API.\nYou can create dummy endpoints in the beginning (PSS will be available).\nThe following endpoints must be available:\n\nGET\nPOST\nPUT\nDELETE\n\nPush your work to the respective branch.\nCreate a pull request for the Product Manager."
+  },
+  {
+    "objectID": "github_project_manager/milestones/m2.html#front-end-developer-20-points",
+    "href": "github_project_manager/milestones/m2.html#front-end-developer-20-points",
+    "title": "",
+    "section": "Front End Developer | 20 points",
+    "text": "Front End Developer | 20 points\n\nCreate a new git branch and name it front.\nCreate a container/service and name it front.\nCommunicate with the PM in order to create the skeleton of the website.\nPush your work to the respective branch.\nCreate a pull request for the Product Manager."
+  },
+  {
+    "objectID": "github_project_manager/milestones/m4.html#final-touches-30-points",
+    "href": "github_project_manager/milestones/m4.html#final-touches-30-points",
+    "title": "",
+    "section": "Final touches (30 points)",
+    "text": "Final touches (30 points)\n\nPMM: Finalize the endpoints and provide detailed guidance to ensure the inclusion of visual analytics.\nDB Developer: Implement any database adjustments as required by new visual analytics features.\nData Scientist: Finalize the model and prepare visual outputs for frontend integration.\nAPI Developer: Create any additional endpoints for analytics visualization.\nFrontend Developer: Ensure all visualizations and analytics are integrated seamlessly using Streamlit."
+  },
+  {
+    "objectID": "github_project_manager/milestones/m4.html#documentation-30-points",
+    "href": "github_project_manager/milestones/m4.html#documentation-30-points",
+    "title": "",
+    "section": "Documentation (30 points)",
+    "text": "Documentation (30 points)\n\nCreate comprehensive documentation using MkDocs.\nEach service (e.g., api, app, database, model) should have its own dedicated page with the documentation.\nThe first page should provide a high-level overview detailing the Problem, Solution, and Expected Outcomes.\nHost the completed documentation on GitHub Pages."
+  },
+  {
+    "objectID": "github_project_manager/milestones/m4.html#readme.md-25-points",
+    "href": "github_project_manager/milestones/m4.html#readme.md-25-points",
+    "title": "",
+    "section": "README.md (25 points)",
+    "text": "README.md (25 points)\n\nThe README.md must be as informative as possible. Include:\n\nWeblinks:\n\nMkDocs\npgadmin\nstreamlit\nswagger\n\nSteps for running the product (check my demo repo).\nSwagger screenshot\nUI screenshot"
+  },
+  {
+    "objectID": "github_project_manager/milestones/m4.html#repository-management-15-points",
+    "href": "github_project_manager/milestones/m4.html#repository-management-15-points",
+    "title": "",
+    "section": "Repository Management (15 points)",
+    "text": "Repository Management (15 points)\n\nClean up the repository to ensure it contains no extraneous files."
   }
 ]
