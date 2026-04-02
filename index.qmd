@@ -190,23 +190,29 @@ Group Project Grade will be allocated to milestones, with the below weights:
 
 ![](img/milestones.png)
 
-## Milestone 1 | 1 Apr - Apr 10 {.smaller}
+## Milestone 1 | 1 Apr - Apr 08 {.smaller}
+
+::: {.incremental}
 
 1. Problem Definition (you can learn more about it  [here](https://docs.google.com/document/d/1uUp4Kpduj768tGjAxXGiGrUesQiYIenQoSLlVpRHqpA/edit?usp=drive_link))
 2. Finalizing roles [here](https://docs.google.com/spreadsheets/d/1TyMjzzwjN9CZi7VKYZqxUSrDiOfUeaLpuWlcDpUZ8jk/edit#gid=0)
 3. Schedule a call/meeting with me and Artur
 4. Find your Repository and join
 5. Create a product roadmap and prioritized functionality (items)
-6. Join the Github Organization
+6. Join the respecitve Repository in the Github Organization (you will be invited to join the organization, please accept the invitation and join the repository) ^[A footnote]
 7. Push *point 1, point 4, point 6 (requirements.txt).*
 8. Prototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)
 9. Create a private Slack channel in **OUR** Workspace and name it **Group {number}**
 10. Install VsCode (also install Project Manager extension)
 
+:::
+
+::: aside
+
+:::
 
 # Environment
 
----
 
 ## Objective
 
