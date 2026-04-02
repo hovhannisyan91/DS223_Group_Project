@@ -74,7 +74,7 @@
     "href": "index.html#roadmap-1",
     "title": "Group Project",
     "section": "Roadmap",
-    "text": "Roadmap\nProject starts on and ends on Thus, we have a little bit more than a months to complete the project."
+    "text": "Roadmap\nProject starts on 01-Apr-2026 and ends on 14-May-2026. Thus, we have a little bit more than a months to complete the project."
   },
   {
     "objectID": "index.html#tasks",
@@ -95,7 +95,7 @@
     "href": "index.html#responsibilities-2",
     "title": "Group Project",
     "section": "Responsibilities",
-    "text": "Responsibilities\nA Backend Developer is responsible to develop multiple endpoints according to the business logic. Our recommendation is to use FastAPI:\n\nit is really fast!\nthe easiest one to learn\nhas integrated swagger (API documentation)\ncritical for Data Scientists, as it enables them to build and deploy end-to-end data science applications"
+    "text": "Responsibilities\nA Backend Developer is responsible to develop multiple endpoints according to the business logic. Our recommendation is to use FastAPI:\n\nit is really fast!\nthe easiest one to learn\nhas integrated swagger (API documentation)\ncritical for Data Scientists, as it enables them to build and deploy end-to-end Data Science and AI applications"
   },
   {
     "objectID": "index.html#responsibilities-3",
@@ -109,14 +109,14 @@
     "href": "index.html#why-streamlit",
     "title": "Group Project",
     "section": "Why Streamlit?",
-    "text": "Why Streamlit?\n\nQuick Development: Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.\nNo Need for Front-End Knowledge: developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.\nReal-Time Interaction: supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).\nVisualization Support: works seamlessly with popular data visualization libraries such as Matplotlib, Seaborn, and Plotly, which can be useful for displaying complex marketing analytics results like clustering or survival analysis"
+    "text": "Why Streamlit?\n\nQuick Development: Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.\nNo Need for Front-End Knowledge: developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.\nReal-Time Interaction: supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).\nVisualization Support: works seamlessly with popular data visualization libraries such as *Seaborn*, and *Plotly*, which can be useful for displaying complex marketing analytics results like clustering or survival analysis"
   },
   {
     "objectID": "index.html#responsibilities-4",
     "href": "index.html#responsibilities-4",
     "title": "Group Project",
     "section": "Responsibilities",
-    "text": "Responsibilities\nA data professional is responsible for the pipeline of predictive and/or analytical parts.\nData Scientist should provide below objects:\n\nData generation\nModel building\nModel(s) evaluation\nPerformance metric"
+    "text": "Responsibilities\nA data professional is responsible for the pipeline of predictive and/or analytical parts.\nData Scientist should provide below objects:\n\nData generation (if needed)\nModel building\nModel(s) evaluation\nPerformance metric\nDepending on the project, the Data Scinetist would be responsible for:\n\nDeploying the model as an API (if needed)\nStorying model results in the database (if needed)"
   },
   {
     "objectID": "index.html#construct-groups",
@@ -137,7 +137,7 @@
     "href": "index.html#milestone-1-1-apr---apr-10",
     "title": "Group Project",
     "section": "Milestone 1 | 1 Apr - Apr 10",
-    "text": "Milestone 1 | 1 Apr - Apr 10\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nCreate a virtual environment in above repo and generate requirements.txt (venv must be ingnored in git)\n\ncreate venv: python -m venv venv\nactivate: source env/bin/activate\ninstall: fastapi\ncreate the requirements.txt file: pip freeze &gt; requirements.txt\ndeactivate: deactivate\n\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype/Flowchart the UI using Figma or other similar tool\nCreate a private Slack channel in our Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
+    "text": "Milestone 1 | 1 Apr - Apr 10\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nJoin the Github Organization\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)\nCreate a private Slack channel in OUR Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
   },
   {
     "objectID": "index.html#objective",

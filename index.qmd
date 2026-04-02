@@ -3,12 +3,13 @@ title: "Group Project"
 # subtitle: "Group"
 author: "Karen Hovhannisyan"
 date: last-modified
+navbar: true
 ---
 
 # Group Project
 
 
-## Scope 
+## Scope {.smaller}
 
 - Finding a Marketing related problem
 - Understanding the methodology of the analysis
@@ -75,7 +76,7 @@ You are going to use  *Github Projects*. Throughout the lectures/sessions you wi
 
 ## Prioritization
 
-![](img/wrong_mvp.jpeg)
+![](img/wrong_mvp.jpeg){width=100%}
 
 
 ## MoSCoW
@@ -84,20 +85,20 @@ You are going to use  *Github Projects*. Throughout the lectures/sessions you wi
 
 ## MVP
 
-::: {.r-fit-text style="text-align:center;"}
-<img src="img/correct_mvp.png" style="width:100%; height:100%; object-fit:cover; margin:0; padding:0;">
-:::
+
+![](img/correct_mvp.png)
+
 
 # Roadmap
 
 ## Roadmap
 
-Project starts on \textbf<1->{01Nov2025} and  ends on \textbf<1->{11Dec2025.} Thus, we have a little bit more than a months to complete the project.
+Project starts on `01-Apr-2026` and  ends on `14-May-2026`. Thus, we have a little bit more than a months to complete the project.
 
-![](img/Roadmap_sample.PNG)
+![](img/Roadmap_sample.PNG){width=100%}
 
 
-## Tasks
+## Tasks {.smaller}
 
 After building the roadmap, teams should break down each block into tasks. 
 
@@ -119,7 +120,7 @@ $${Backlog \rightarrow WIP \rightarrow Review \rightarrow Done}$$
 
 ## Responsibilities
 
-The Database Developer is responsible for:
+**The Database Developer is responsible for:**
 
 - designing database
 - building the tables
@@ -135,7 +136,7 @@ Our recommendation is to use **FastAPI**:
 - it is really fast!
 - the easiest one to learn
 - has integrated swagger (API documentation)
-- critical for Data Scientists, as it enables them to build and deploy end-to-end data science applications
+- critical for Data Scientists, as it enables them to build and deploy end-to-end Data Science and AI applications
 
 ![](img/FrontvsBack.png)
 
@@ -152,7 +153,7 @@ The Front-End Developer will be responsible for building a user-friendly interfa
 - **Quick Development:** Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.
 - **No Need for Front-End Knowledge:** developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.
 - **Real-Time Interaction:**  supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).
-- **Visualization Support:**  works seamlessly with popular data visualization libraries such as *Matplotlib*, *Seaborn*, and *Plotly*, which can be useful for displaying complex marketing analytics results like clustering or survival analysis 
+- **Visualization Support:**  works seamlessly with popular data visualization libraries such as  `*Seaborn*`, and `*Plotly*`, which can be useful for displaying complex marketing analytics results like clustering or survival analysis 
 
 # Data Analyst/Scientist 
 
@@ -160,12 +161,15 @@ The Front-End Developer will be responsible for building a user-friendly interfa
 
 A data professional is responsible for the pipeline of predictive and/or analytical parts.
 
-Data Scientist should provide below objects:
+**Data Scientist should provide below objects:**
 
-- Data generation
+- Data generation (if needed)
 - Model building 
 - Model(s) evaluation
 - Performance metric
+- Depending on the project, the Data Scinetist would be responsible for:
+  - Deploying the model as an API (if needed)
+  - Storying model results in the database (if needed)
 
 
 # Milestones
@@ -193,15 +197,10 @@ Group Project Grade will be allocated to milestones, with the below weights:
 3. Schedule a call/meeting with me and Artur
 4. Find your Repository and join
 5. Create a product roadmap and prioritized functionality (items)
-6. Create a virtual environment in above repo and generate `requirements.txt` (venv must be ingnored in git)
-    - **create venv:** `python -m venv venv`
-    - **activate:** `source env/bin/activate`
-    - **install:** `fastapi`
-    - **create the `requirements.txt` file:** `pip freeze > requirements.txt`
-    - deactivate: `deactivate`
+6. Join the Github Organization
 7. Push *point 1, point 4, point 6 (requirements.txt).*
-8. Prototype/Flowchart the UI using *Figma* or other similar tool
-9. Create a private Slack channel in our Workspace and name it **Group {number}**
+8. Prototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)
+9. Create a private Slack channel in **OUR** Workspace and name it **Group {number}**
 10. Install VsCode (also install Project Manager extension)
 
 

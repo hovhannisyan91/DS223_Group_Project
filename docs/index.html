@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Karen Hovhannisyan">
-  <meta name="dcterms.date" content="2026-03-31">
+  <meta name="dcterms.date" content="2026-04-02">
   <title>Group Project</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -216,14 +216,14 @@ Karen Hovhannisyan
 </div>
 </div>
 
-  <p class="date">2026-03-31</p>
+  <p class="date">2026-04-02</p>
 </section>
 <section>
 <section id="group-project" class="title-slide slide level1 center">
 <h1>Group Project</h1>
 
 </section>
-<section id="scope" class="slide level2">
+<section id="scope" class="slide level2 smaller">
 <h2>Scope</h2>
 <ul>
 <li>Finding a Marketing related problem</li>
@@ -294,17 +294,15 @@ Karen Hovhannisyan
 <section id="prioritization" class="slide level2">
 <h2>Prioritization</h2>
 
-<img data-src="img/wrong_mvp.jpeg" class="r-stretch"></section>
+<img data-src="img/wrong_mvp.jpeg" style="width:100.0%" class="r-stretch"></section>
 <section id="moscow" class="slide level2">
 <h2>MoSCoW</h2>
 
 <img data-src="img/MoSCoW.png" style="width:100.0%" class="r-stretch"></section>
 <section id="mvp" class="slide level2">
 <h2>MVP</h2>
-<div class="r-fit-text" style="text-align:center;">
-<p><img src="img/correct_mvp.png" style="width:100%; height:100%; object-fit:cover; margin:0; padding:0;"></p>
-</div>
-</section></section>
+
+<img data-src="img/correct_mvp.png" class="r-stretch"></section></section>
 <section>
 <section id="roadmap" class="title-slide slide level1 center">
 <h1>Roadmap</h1>
@@ -312,10 +310,10 @@ Karen Hovhannisyan
 </section>
 <section id="roadmap-1" class="slide level2">
 <h2>Roadmap</h2>
-<p>Project starts on and ends on Thus, we have a little bit more than a months to complete the project.</p>
+<p>Project starts on <code>01-Apr-2026</code> and ends on <code>14-May-2026</code>. Thus, we have a little bit more than a months to complete the project.</p>
 
-<img data-src="img/Roadmap_sample.PNG" class="r-stretch"></section>
-<section id="tasks" class="slide level2">
+<img data-src="img/Roadmap_sample.PNG" style="width:100.0%" class="r-stretch"></section>
+<section id="tasks" class="slide level2 smaller">
 <h2>Tasks</h2>
 <p>After building the roadmap, teams should break down each block into tasks.</p>
 <p>For the sake of simplicity, we can use the following flow:</p>
@@ -338,7 +336,7 @@ Karen Hovhannisyan
 </section>
 <section id="responsibilities-1" class="slide level2">
 <h2>Responsibilities</h2>
-<p>The Database Developer is responsible for:</p>
+<p><strong>The Database Developer is responsible for:</strong></p>
 <ul>
 <li>designing database</li>
 <li>building the tables</li>
@@ -357,7 +355,7 @@ Karen Hovhannisyan
 <li>it is really fast!</li>
 <li>the easiest one to learn</li>
 <li>has integrated swagger (API documentation)</li>
-<li>critical for Data Scientists, as it enables them to build and deploy end-to-end data science applications</li>
+<li>critical for Data Scientists, as it enables them to build and deploy end-to-end Data Science and AI applications</li>
 </ul>
 
 <img data-src="img/FrontvsBack.png" class="r-stretch"></section></section>
@@ -376,7 +374,7 @@ Karen Hovhannisyan
 <li><strong>Quick Development:</strong> Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.</li>
 <li><strong>No Need for Front-End Knowledge:</strong> developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.</li>
 <li><strong>Real-Time Interaction:</strong> supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).</li>
-<li><strong>Visualization Support:</strong> works seamlessly with popular data visualization libraries such as <em>Matplotlib</em>, <em>Seaborn</em>, and <em>Plotly</em>, which can be useful for displaying complex marketing analytics results like clustering or survival analysis</li>
+<li><strong>Visualization Support:</strong> works seamlessly with popular data visualization libraries such as <code>*Seaborn*</code>, and <code>*Plotly*</code>, which can be useful for displaying complex marketing analytics results like clustering or survival analysis</li>
 </ul>
 </section></section>
 <section>
@@ -387,12 +385,17 @@ Karen Hovhannisyan
 <section id="responsibilities-4" class="slide level2">
 <h2>Responsibilities</h2>
 <p>A data professional is responsible for the pipeline of predictive and/or analytical parts.</p>
-<p>Data Scientist should provide below objects:</p>
+<p><strong>Data Scientist should provide below objects:</strong></p>
 <ul>
-<li>Data generation</li>
+<li>Data generation (if needed)</li>
 <li>Model building</li>
 <li>Model(s) evaluation</li>
 <li>Performance metric</li>
+<li>Depending on the project, the Data Scinetist would be responsible for:
+<ul>
+<li>Deploying the model as an API (if needed)</li>
+<li>Storying model results in the database (if needed)</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -418,17 +421,10 @@ Karen Hovhannisyan
 <li>Schedule a call/meeting with me and Artur</li>
 <li>Find your Repository and join</li>
 <li>Create a product roadmap and prioritized functionality (items)</li>
-<li>Create a virtual environment in above repo and generate <code>requirements.txt</code> (venv must be ingnored in git)
-<ul>
-<li><strong>create venv:</strong> <code>python -m venv venv</code></li>
-<li><strong>activate:</strong> <code>source env/bin/activate</code></li>
-<li><strong>install:</strong> <code>fastapi</code></li>
-<li><strong>create the <code>requirements.txt</code> file:</strong> <code>pip freeze &gt; requirements.txt</code></li>
-<li>deactivate: <code>deactivate</code></li>
-</ul></li>
+<li>Join the Github Organization</li>
 <li>Push <em>point 1, point 4, point 6 (requirements.txt).</em></li>
-<li>Prototype/Flowchart the UI using <em>Figma</em> or other similar tool</li>
-<li>Create a private Slack channel in our Workspace and name it <strong>Group {number}</strong></li>
+<li>Prototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)</li>
+<li>Create a private Slack channel in <strong>OUR</strong> Workspace and name it <strong>Group {number}</strong></li>
 <li>Install VsCode (also install Project Manager extension)</li>
 </ol>
 </section></section>
