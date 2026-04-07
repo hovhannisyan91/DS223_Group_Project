@@ -285,5 +285,12 @@
     "title": "",
     "section": "Repository Management (15 points)",
     "text": "Repository Management (15 points)\n\nClean up the repository to ensure it contains no extraneous files."
+  },
+  {
+    "objectID": "index.html#milestone-1-1-apr---apr-08",
+    "href": "index.html#milestone-1-1-apr---apr-08",
+    "title": "Group Project",
+    "section": "Milestone 1 | 1 Apr - Apr 08",
+    "text": "Milestone 1 | 1 Apr - Apr 08\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nJoin the respecitve Repository in the Github Organization (you will be invited to join the organization, please accept the invitation and join the repository) 1\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)\nCreate a private Slack channel in OUR Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)\n\n\n\n\nA footnote"
   }
 ]
