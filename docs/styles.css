@@ -1,5 +1,0 @@
-/* Center any image on slides */
-.reveal section img {
-  display: block;
-  margin: 0 auto;
-}
