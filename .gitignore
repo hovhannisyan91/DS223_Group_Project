@@ -2,12 +2,12 @@
 __pycache__/
 *.py[codz]
 *$py.class
-github_project_manager
+github_project_manager/
 slides/.quarto
 # C extensions
 *.so
 
-github_project_manager
+
 
 # Distribution / packaging
 .Python
