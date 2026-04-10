@@ -13,5 +13,17 @@
   },
   "github_project_manager/milestones/m3.md": {
     "m3.html": "9027d3fc"
+  },
+  "content/01_docker.qmd": {
+    "01_docker.html": "db998843"
+  },
+  "content/02_database.qmd": {
+    "02_database.html": "69186a1f"
+  },
+  "content/03_frontend.qmd": {
+    "03_frontend.html": "391113b0"
+  },
+  "content/04_backend.qmd": {
+    "04_backend.html": "f506f349"
   }
 }

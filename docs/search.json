@@ -1,0 +1,289 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Finding a Marketing related problem\nUnderstanding the methodology of the analysis\nCreate a product using microservice architecture:\n\nPredictive Model (component)\nDB\nData Processing pipeline (if needed)\nBackend\nFrontend (only for the groups with 5 members)\n\nAdd documentation\n\n\n\n\n\nProduct/Project Manager: team sync, product research\nDB Developer: responsible for the database development\nData Scientist/Analyst: responsible for Modeling and EDA\nBackend Developer: responsible for the API\nFrontend Developer: responsible for the layout of the product\n\n\nI will be the requestor\n\n\n\n\n\n\n\n\n\n\n\n\n“If you want to go fast, go alone. If you want to go far, go together.”"
+  },
+  {
+    "objectID": "index.html#scope",
+    "href": "index.html#scope",
+    "title": "Home",
+    "section": "",
+    "text": "Finding a Marketing related problem\nUnderstanding the methodology of the analysis\nCreate a product using microservice architecture:\n\nPredictive Model (component)\nDB\nData Processing pipeline (if needed)\nBackend\nFrontend (only for the groups with 5 members)\n\nAdd documentation"
+  },
+  {
+    "objectID": "index.html#team",
+    "href": "index.html#team",
+    "title": "Home",
+    "section": "",
+    "text": "Product/Project Manager: team sync, product research\nDB Developer: responsible for the database development\nData Scientist/Analyst: responsible for Modeling and EDA\nBackend Developer: responsible for the API\nFrontend Developer: responsible for the layout of the product\n\n\nI will be the requestor"
+  },
+  {
+    "objectID": "index.html#flow",
+    "href": "index.html#flow",
+    "title": "Home",
+    "section": "Flow",
+    "text": "Flow"
+  },
+  {
+    "objectID": "content/01_docker.html",
+    "href": "content/01_docker.html",
+    "title": "Introduction to Docker",
+    "section": "",
+    "text": "Download Docker Desktop from the official website:\ndownload link\nChoose the installer for your operating system:\n\nWindows (Docker Desktop for Windows)\nmacOS (Docker Desktop for Mac – Intel or Apple Silicon)\n\n\n\n\n\n\n\n\n\n\nDownload Docker Desktop for Windows. \nRun the installer. \nDuring installation, ensure the following:\n\nEnable Use WSL 2 instead of Hyper-V (recommended)\nAllow required components to install (WSL 2, Linux kernel updates) \n\nRestart the system if prompted.\n\n\n\n\nOpen PowerShell or Command Prompt and run:\ndocker --version\n\nThen verify Docker is running:\ndocker run hello-world\n\nIf you see a “Hello from Docker!” message, the installation is successful.\n\n\n\nIf Docker reports that WSL 2 is not installed:\nInstall WSL 2 manually:\nwsl --install\n\nRestart your machine and try again.\nIf Docker fails to start, ensure:\n\nVirtualization is enabled in BIOS.\nWSL is enabled in Windows Features.\n\n\n\n\n\n\n\n\n\n\n\nDownload Docker Desktop for macOS. \nOpen the .dmg file.\nDrag Docker.app into the Applications folder. \nStart Docker Desktop from Applications.\n\n\n\n\n\nOpen Terminal and run:\ndocker --version\n\nThen run:\ndocker run hello-world\n\nIf the container runs successfully, Docker is installed correctly.\n\n\n\n\n\n\nOpen Docker Desktop → Settings → Resources, and adjust:\n\nCPU\nMemory\nDisk image size\n\n\nFor database-heavy workloads, set at least:\n\n2 CPUs\n\n4 GB RAM\n\n\n\n\nOpen Docker Desktop → Settings → Kubernetes → Enable Kubernetes.\n\nWe will not cover it in this course."
+  },
+  {
+    "objectID": "content/01_docker.html#download",
+    "href": "content/01_docker.html#download",
+    "title": "Introduction to Docker",
+    "section": "",
+    "text": "Download Docker Desktop from the official website:\ndownload link\nChoose the installer for your operating system:\n\nWindows (Docker Desktop for Windows)\nmacOS (Docker Desktop for Mac – Intel or Apple Silicon)"
+  },
+  {
+    "objectID": "content/01_docker.html#windows-installation",
+    "href": "content/01_docker.html#windows-installation",
+    "title": "Introduction to Docker",
+    "section": "",
+    "text": "Download Docker Desktop for Windows. \nRun the installer. \nDuring installation, ensure the following:\n\nEnable Use WSL 2 instead of Hyper-V (recommended)\nAllow required components to install (WSL 2, Linux kernel updates) \n\nRestart the system if prompted.\n\n\n\n\nOpen PowerShell or Command Prompt and run:\ndocker --version\n\nThen verify Docker is running:\ndocker run hello-world\n\nIf you see a “Hello from Docker!” message, the installation is successful.\n\n\n\nIf Docker reports that WSL 2 is not installed:\nInstall WSL 2 manually:\nwsl --install\n\nRestart your machine and try again.\nIf Docker fails to start, ensure:\n\nVirtualization is enabled in BIOS.\nWSL is enabled in Windows Features."
+  },
+  {
+    "objectID": "content/01_docker.html#macos-installation",
+    "href": "content/01_docker.html#macos-installation",
+    "title": "Introduction to Docker",
+    "section": "",
+    "text": "Download Docker Desktop for macOS. \nOpen the .dmg file.\nDrag Docker.app into the Applications folder. \nStart Docker Desktop from Applications.\n\n\n\n\nOpen Terminal and run:\ndocker --version\n\nThen run:\ndocker run hello-world\n\nIf the container runs successfully, Docker is installed correctly."
+  },
+  {
+    "objectID": "content/01_docker.html#post-installation-setup",
+    "href": "content/01_docker.html#post-installation-setup",
+    "title": "Introduction to Docker",
+    "section": "",
+    "text": "Open Docker Desktop → Settings → Resources, and adjust:\n\nCPU\nMemory\nDisk image size\n\n\nFor database-heavy workloads, set at least:\n\n2 CPUs\n\n4 GB RAM\n\n\n\n\nOpen Docker Desktop → Settings → Kubernetes → Enable Kubernetes.\n\nWe will not cover it in this course."
+  },
+  {
+    "objectID": "content/01_docker.html#recommended-docker-tools",
+    "href": "content/01_docker.html#recommended-docker-tools",
+    "title": "Introduction to Docker",
+    "section": "Recommended Docker Tools",
+    "text": "Recommended Docker Tools\n\nFor Development\n\nDocker Compose (included in Docker Desktop)\nDev Containers (VS Code extension)\nDocker CLI\n\n\n\n\nFor Container Management\n\ndocker stats\ndocker ps -a\ndocker logs &lt;container&gt;\ndocker exec -it &lt;container&gt; /bin/bash\n\n\nWe will go over these during live sessions.\n\n\nUseful Images for the Course\n\npostgres:latest\npgadmin:latest\npython:3.13-slim\njupyter/base-notebook"
+  },
+  {
+    "objectID": "content/01_docker.html#installation",
+    "href": "content/01_docker.html#installation",
+    "title": "Introduction to Docker",
+    "section": "",
+    "text": "Download Docker Desktop from the official website:\ndownload link\nChoose the installer for your operating system:\n\nWindows (Docker Desktop for Windows)\nmacOS (Docker Desktop for Mac – Intel or Apple Silicon)\n\n\n\n\n\n\n\n\n\n\nDownload Docker Desktop for Windows. \nRun the installer. \nDuring installation, ensure the following:\n\nEnable Use WSL 2 instead of Hyper-V (recommended)\nAllow required components to install (WSL 2, Linux kernel updates) \n\nRestart the system if prompted.\n\n\n\n\nOpen PowerShell or Command Prompt and run:\ndocker --version\n\nThen verify Docker is running:\ndocker run hello-world\n\nIf you see a “Hello from Docker!” message, the installation is successful.\n\n\n\nIf Docker reports that WSL 2 is not installed:\nInstall WSL 2 manually:\nwsl --install\n\nRestart your machine and try again.\nIf Docker fails to start, ensure:\n\nVirtualization is enabled in BIOS.\nWSL is enabled in Windows Features.\n\n\n\n\n\n\n\n\n\n\n\nDownload Docker Desktop for macOS. \nOpen the .dmg file.\nDrag Docker.app into the Applications folder. \nStart Docker Desktop from Applications.\n\n\n\n\n\nOpen Terminal and run:\ndocker --version\n\nThen run:\ndocker run hello-world\n\nIf the container runs successfully, Docker is installed correctly.\n\n\n\n\n\n\nOpen Docker Desktop → Settings → Resources, and adjust:\n\nCPU\nMemory\nDisk image size\n\n\nFor database-heavy workloads, set at least:\n\n2 CPUs\n\n4 GB RAM\n\n\n\n\nOpen Docker Desktop → Settings → Kubernetes → Enable Kubernetes.\n\nWe will not cover it in this course."
+  },
+  {
+    "objectID": "index.html#teamwork",
+    "href": "index.html#teamwork",
+    "title": "Home",
+    "section": "",
+    "text": "“If you want to go fast, go alone. If you want to go far, go together.”"
+  },
+  {
+    "objectID": "index.html#responsibilities",
+    "href": "index.html#responsibilities",
+    "title": "Home",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nProduct Manager is responsible for the product roadmap.\n\nDefine a product\nDefine MVP\nManage Stakeholders:\n\nCommunicate with me and Artur\nTeam Sync\n\nFollow-up tasks\nBuild low fidelity mockup (expand the above flowchart)\nManage pull requests"
+  },
+  {
+    "objectID": "index.html#tools",
+    "href": "index.html#tools",
+    "title": "Home",
+    "section": "Tools",
+    "text": "Tools\nYou are going to use Github Projects. Throughout the lectures/sessions you will learn more."
+  },
+  {
+    "objectID": "index.html#prioritization",
+    "href": "index.html#prioritization",
+    "title": "Home",
+    "section": "Prioritization",
+    "text": "Prioritization"
+  },
+  {
+    "objectID": "index.html#moscow",
+    "href": "index.html#moscow",
+    "title": "Home",
+    "section": "MoSCoW",
+    "text": "MoSCoW"
+  },
+  {
+    "objectID": "index.html#mvp",
+    "href": "index.html#mvp",
+    "title": "Home",
+    "section": "MVP",
+    "text": "MVP"
+  },
+  {
+    "objectID": "index.html#roadmap-1",
+    "href": "index.html#roadmap-1",
+    "title": "Home",
+    "section": "Roadmap",
+    "text": "Roadmap\nProject starts on 01-Apr-2026 and ends on 14-May-2026. Thus, we have a little bit more than a months to complete the project."
+  },
+  {
+    "objectID": "index.html#tasks",
+    "href": "index.html#tasks",
+    "title": "Home",
+    "section": "Tasks",
+    "text": "Tasks\nAfter building the roadmap, teams should break down each block into tasks.\nFor the sake of simplicity, we can use the following flow:\n\\[{Backlog \\rightarrow WIP \\rightarrow Review \\rightarrow Done}\\]\n\nBacklog: filling in all the tasks according to the roadmap\nWIP: work in process:\n\nFollowing up the status of the tasks\nDiscuss in the comments in case of issues. Feel free to add me and/or Artur in the discussion.\n\nReview: checking whether the task is completed correctly\nDone"
+  },
+  {
+    "objectID": "index.html#responsibilities-1",
+    "href": "index.html#responsibilities-1",
+    "title": "Home",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nThe Database Developer is responsible for:\n\ndesigning database\nbuilding the tables\ncreate functionality to interact with Python(CRUD and not only )"
+  },
+  {
+    "objectID": "index.html#responsibilities-2",
+    "href": "index.html#responsibilities-2",
+    "title": "Home",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nA Backend Developer is responsible to develop multiple endpoints according to the business logic. Our recommendation is to use FastAPI:\n\nit is really fast!\nthe easiest one to learn\nhas integrated swagger (API documentation)\ncritical for Data Scientists, as it enables them to build and deploy end-to-end Data Science and AI applications"
+  },
+  {
+    "objectID": "index.html#responsibilities-3",
+    "href": "index.html#responsibilities-3",
+    "title": "Home",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nThe Front-End Developer will be responsible for building a user-friendly interface for presenting the results and insights by collaborating with other team members (such as the data scientist, Backend developer, and database developer) to integrate data models, APIs, and visualizations into a cohesive, interactive web application."
+  },
+  {
+    "objectID": "index.html#why-streamlit",
+    "href": "index.html#why-streamlit",
+    "title": "Home",
+    "section": "Why Streamlit?",
+    "text": "Why Streamlit?\n\nQuick Development: Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.\nNo Need for Front-End Knowledge: developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.\nReal-Time Interaction: supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).\nVisualization Support: works seamlessly with popular data visualization libraries such as *Seaborn*, and *Plotly*, which can be useful for displaying complex marketing analytics results like clustering or survival analysis"
+  },
+  {
+    "objectID": "index.html#responsibilities-4",
+    "href": "index.html#responsibilities-4",
+    "title": "Home",
+    "section": "Responsibilities",
+    "text": "Responsibilities\nA data professional is responsible for the pipeline of predictive and/or analytical parts.\nData Scientist should provide below objects:\n\nData generation (if needed)\nModel building\nModel(s) evaluation\nPerformance metric\nDepending on the project, the Data Scinetist would be responsible for:\n\nDeploying the model as an API (if needed)\nStorying model results in the database (if needed)"
+  },
+  {
+    "objectID": "index.html#construct-groups",
+    "href": "index.html#construct-groups",
+    "title": "Home",
+    "section": "Construct Groups",
+    "text": "Construct Groups\nConsidering the complexity of a group project, we must start doing it as soon as possible! (not until the 1st of November!)"
+  },
+  {
+    "objectID": "index.html#milestones-1",
+    "href": "index.html#milestones-1",
+    "title": "Home",
+    "section": "Milestones",
+    "text": "Milestones\nWe are going to have 4 graded milestones to complete the project.\nGroup Project Grade will be allocated to milestones, with the below weights:"
+  },
+  {
+    "objectID": "index.html#milestone-1-1-apr---apr-08",
+    "href": "index.html#milestone-1-1-apr---apr-08",
+    "title": "Home",
+    "section": "Milestone 1 | 1 Apr - Apr 08",
+    "text": "Milestone 1 | 1 Apr - Apr 08\n\n\nProblem Definition (you can learn more about it here)\nFinalizing roles here\nSchedule a call/meeting with me and Artur\nFind your Repository and join\nCreate a product roadmap and prioritized functionality (items)\nJoin the respecitve Repository in the Github Organization (you will be invited to join the organization, please accept the invitation and join the repository) 1\nPush point 1, point 4, point 6 (requirements.txt).\nPrototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)\nCreate a private Slack channel in OUR Workspace and name it Group {number}\nInstall VsCode (also install Project Manager extension)"
+  },
+  {
+    "objectID": "index.html#objective",
+    "href": "index.html#objective",
+    "title": "Home",
+    "section": "Objective",
+    "text": "Objective\n\nDocker: intuition\n\nSchema Design\n\nData Generation\n\nData Ingestion"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-1",
+    "href": "index.html#dockerized-environment-1",
+    "title": "Home",
+    "section": "Dockerized Environment: 1",
+    "text": "Dockerized Environment: 1"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-2",
+    "href": "index.html#dockerized-environment-2",
+    "title": "Home",
+    "section": "Dockerized Environment: 2",
+    "text": "Dockerized Environment: 2"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-3",
+    "href": "index.html#dockerized-environment-3",
+    "title": "Home",
+    "section": "Dockerized Environment: 3",
+    "text": "Dockerized Environment: 3"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-4",
+    "href": "index.html#dockerized-environment-4",
+    "title": "Home",
+    "section": "Dockerized Environment: 4",
+    "text": "Dockerized Environment: 4"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-5",
+    "href": "index.html#dockerized-environment-5",
+    "title": "Home",
+    "section": "Dockerized Environment: 5",
+    "text": "Dockerized Environment: 5"
+  },
+  {
+    "objectID": "index.html#dockerized-environment-we-need",
+    "href": "index.html#dockerized-environment-we-need",
+    "title": "Home",
+    "section": "Dockerized Environment: We Need",
+    "text": "Dockerized Environment: We Need"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Home",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nA footnote↩︎"
+  },
+  {
+    "objectID": "index.html#group-project",
+    "href": "index.html#group-project",
+    "title": "Home",
+    "section": "",
+    "text": "Finding a Marketing related problem\nUnderstanding the methodology of the analysis\nCreate a product using microservice architecture:\n\nPredictive Model (component)\nDB\nData Processing pipeline (if needed)\nBackend\nFrontend (only for the groups with 5 members)\n\nAdd documentation\n\n\n\n\n\nProduct/Project Manager: team sync, product research\nDB Developer: responsible for the database development\nData Scientist/Analyst: responsible for Modeling and EDA\nBackend Developer: responsible for the API\nFrontend Developer: responsible for the layout of the product\n\n\nI will be the requestor\n\n\n\n\n\n\n\n\n\n\n\n\n“If you want to go fast, go alone. If you want to go far, go together.”"
+  },
+  {
+    "objectID": "index.html#product-manager",
+    "href": "index.html#product-manager",
+    "title": "Home",
+    "section": "Product Manager",
+    "text": "Product Manager\n\nResponsibilities\nProduct Manager is responsible for the product roadmap.\n\nDefine a product\nDefine MVP\nManage Stakeholders:\n\nCommunicate with me and Artur\nTeam Sync\n\nFollow-up tasks\nBuild low fidelity mockup (expand the above flowchart)\nManage pull requests\n\n\n\nTools\nYou are going to use Github Projects. Throughout the lectures/sessions you will learn more.\n\nStitch\nFigma\n\n\n\nPrioritization\n\n\n\nMoSCoW\n\n\n\nMVP"
+  },
+  {
+    "objectID": "index.html#roadmap",
+    "href": "index.html#roadmap",
+    "title": "Home",
+    "section": "Roadmap",
+    "text": "Roadmap\n\nRoadmap\nProject starts on 01-Apr-2026 and ends on 14-May-2026. Thus, we have a little bit more than a months to complete the project.\n\n\n\nTasks\nAfter building the roadmap, teams should break down each block into tasks.\nFor the sake of simplicity, we can use the following flow:\n\\[{Backlog \\rightarrow WIP \\rightarrow Review \\rightarrow Done}\\]\n\nBacklog: filling in all the tasks according to the roadmap\nWIP: work in process:\n\nFollowing up the status of the tasks\nDiscuss in the comments in case of issues. Feel free to add me and/or Artur in the discussion.\n\nReview: checking whether the task is completed correctly\nDone"
+  },
+  {
+    "objectID": "index.html#database-developer",
+    "href": "index.html#database-developer",
+    "title": "Home",
+    "section": "Database Developer",
+    "text": "Database Developer\n\nResponsibilities\nThe Database Developer is responsible for:\n\ndesigning database\nbuilding the tables\ncreate functionality to interact with Python(CRUD and not only )"
+  },
+  {
+    "objectID": "index.html#backend-developer",
+    "href": "index.html#backend-developer",
+    "title": "Home",
+    "section": "Backend Developer",
+    "text": "Backend Developer\n\nResponsibilities\nA Backend Developer is responsible to develop multiple endpoints according to the business logic. Our recommendation is to use FastAPI:\n\nit is really fast!\nthe easiest one to learn\nhas integrated swagger (API documentation)\ncritical for Data Scientists, as it enables them to build and deploy end-to-end Data Science and AI applications"
+  },
+  {
+    "objectID": "index.html#frontend-developer",
+    "href": "index.html#frontend-developer",
+    "title": "Home",
+    "section": "Frontend Developer",
+    "text": "Frontend Developer\n\nResponsibilities\nThe Front-End Developer will be responsible for building a user-friendly interface for presenting the results and insights by collaborating with other team members (such as the data scientist, Backend developer, and database developer) to integrate data models, APIs, and visualizations into a cohesive, interactive web application.\n\n\nWhy Streamlit?\n\nQuick Development: Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.\nNo Need for Front-End Knowledge: developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.\nReal-Time Interaction: supports interactive widgets like sliders, forms, and buttons that allow users to explore data models and see the impact of different parameters in real-time, which is valuable in marketing analytics projects (e.g., interactive A/B testing visualizations or customer segmentation insights).\nVisualization Support: works seamlessly with popular data visualization libraries such as *Seaborn*, and *Plotly*, which can be useful for displaying complex marketing analytics results like clustering or survival analysis"
+  }
+]

@@ -1,0 +1,6 @@
+---
+title: "Building PostgreSQl DB with Docker"
+subtitle: "Our first Database"
+categories: [Docker, Python, SQL, PostgreSQL]
+image_path: "../img"
+---

@@ -1,0 +1,9 @@
+---
+title: "Intro to FastAPI"
+subtitle: "Interacting with the DB and Web"
+categories: [FastAPI, Python, SQL, PostgreSQL, Backend Development]
+image_path: "../img"
+---
+
+
+## Comming Soon

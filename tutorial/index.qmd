@@ -1,15 +1,11 @@
 ---
-title: "Group Project"
-# subtitle: "Group"
-author: "Karen Hovhannisyan"
-date: last-modified
-navbar: true
+title: Home
+format: html
 ---
 
-# Group Project
+## Group Project
 
-
-## Scope {.smaller}
+### Scope 
 
 - Finding a Marketing related problem
 - Understanding the methodology of the analysis
@@ -22,7 +18,7 @@ navbar: true
 - Add documentation 
 
 
-## Team
+### Team
 
 - **Product/Project Manager:** team sync, product research
 - **DB Developer:** responsible for the database development
@@ -32,18 +28,17 @@ navbar: true
 
 >I will be the requestor
 
-## Flow
+### Flow
 
 
 ![](img/schema.jpeg)
 
 
-
-## Architecture
+### Architecture
 
 ![](img/docker_6.jpg)
 
-## Teamwork
+### Teamwork
 
 *"If you want to go fast, go alone. If you want to go far, go together."*
 
@@ -52,9 +47,9 @@ navbar: true
 
 ![](img/group_project.jpg)
 
-#   Product Manager
+## Product Manager
 
-## Responsibilities
+### Responsibilities
 
 **Product Manager** is responsible for the product roadmap.
 
@@ -68,37 +63,41 @@ navbar: true
 6. Manage `pull requests`
 
 
-## Tools
+### Tools
 
 
 You are going to use  *Github Projects*. Throughout the lectures/sessions you will learn more.
+
+
+- [Stitch](https://stitch.withgoogle.com)
+- [Figma](https://www.figma.com)
  
 
-## Prioritization
+### Prioritization
 
 ![](img/wrong_mvp.jpeg){width=100%}
 
 
-## MoSCoW
+### MoSCoW
 
 ![](img/MoSCoW.png){width=100%}
 
-## MVP
+### MVP
 
 
 ![](img/correct_mvp.png)
 
 
-# Roadmap
-
 ## Roadmap
+
+### Roadmap
 
 Project starts on `01-Apr-2026` and  ends on `14-May-2026`. Thus, we have a little bit more than a months to complete the project.
 
 ![](img/Roadmap_sample.PNG){width=100%}
 
 
-## Tasks {.smaller}
+### Tasks 
 
 After building the roadmap, teams should break down each block into tasks. 
 
@@ -116,9 +115,9 @@ $${Backlog \rightarrow WIP \rightarrow Review \rightarrow Done}$$
  
     
 
-# Database Developer
+## Database Developer
 
-## Responsibilities
+### Responsibilities
 
 **The Database Developer is responsible for:**
 
@@ -126,9 +125,9 @@ $${Backlog \rightarrow WIP \rightarrow Review \rightarrow Done}$$
 - building the tables
 - create functionality to interact with Python(CRUD and not only )
 
-# Backend Developer
+## Backend Developer
 
-## Responsibilities
+### Responsibilities
 
 A Backend Developer is responsible to develop multiple endpoints according to the business logic.
 Our recommendation is to use **FastAPI**:
@@ -141,14 +140,14 @@ Our recommendation is to use **FastAPI**:
 ![](img/FrontvsBack.png)
 
 
-# Frontend Developer
+## Frontend Developer
 
-## Responsibilities
+### Responsibilities
 
 The Front-End Developer will be responsible for building a user-friendly interface for presenting the results and insights by collaborating with other team members (such as the data scientist, Backend developer, and database developer) to integrate data models, APIs, and visualizations into a cohesive, interactive web application.
 
 
-## Why Streamlit? {.smaller}
+### Why Streamlit?
 
 - **Quick Development:** Streamlit simplifies the process of turning Python scripts into interactive web applications, making it a great choice for a fast-paced group project where quick prototyping and iteration are important.
 - **No Need for Front-End Knowledge:** developers don’t need extensive knowledge of web technologies like JavaScript, making it easier for data scientists or Python developers to create visually appealing apps.
@@ -175,13 +174,13 @@ A data professional is responsible for the pipeline of predictive and/or analyti
 # Milestones
 
 
-## Construct Groups
+### Construct Groups
 
 
-Considering the complexity of a group project, we must start doing it as soon as possible! (not until the **1st of November!**)
+Considering the complexity of a group project, we must start doing it as soon as possible! (not until the **1st of April!**)
+<!-- todo: to change -->
 
-
-## Milestones
+### Milestones
 
 We are going to have 4 **graded** milestones to complete the project. 
 
@@ -189,194 +188,4 @@ Group Project Grade will be allocated to milestones, with the below weights:
 
 
 ![](img/milestones.png)
-
-## Milestone 1 | 1 Apr - Apr 08 {.smaller}
-
-::: {.incremental}
-
-1. Problem Definition (you can learn more about it  [here](https://docs.google.com/document/d/1uUp4Kpduj768tGjAxXGiGrUesQiYIenQoSLlVpRHqpA/edit?usp=drive_link))
-2. Finalizing roles [here](https://docs.google.com/spreadsheets/d/1TyMjzzwjN9CZi7VKYZqxUSrDiOfUeaLpuWlcDpUZ8jk/edit#gid=0)
-3. Schedule a call/meeting with me and Artur
-4. Find your Repository and join
-5. Create a product roadmap and prioritized functionality (items)
-6. Join the respecitve Repository in the Github Organization (you will be invited to join the organization, please accept the invitation and join the repository) ^[A footnote]
-7. Push *point 1, point 4, point 6 (requirements.txt).*
-8. Prototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)
-9. Create a private Slack channel in **OUR** Workspace and name it **Group {number}**
-10. Install VsCode (also install Project Manager extension)
-
-:::
-
-::: aside
-
-:::
-
-# Environment
-
-
-## Objective
-
-- **Docker:** intuition  
-- Schema Design  
-- Data Generation  
-- Data Ingestion  
-
----
-
-## Dockerized Environment: 1
-
-![](img/docker_1.jpg){.plain height=500px}
-
----
-
-## Dockerized Environment: 2
-
-![](img/docker_2.jpg){.plain height=500px}
-
----
-
-## Dockerized Environment: 3
-
-![](img/docker_3.jpg){.plain height=500px}
-
----
-
-## Dockerized Environment: 4
-
-![](img/docker_4.jpg){.plain height=500px}
-
----
-
-## Dockerized Environment: 5
-
-![](img/docker_5.jpg){.plain height=500px}
-
----
-
-## Dockerized Environment: We Need
-
-![](img/docker_6.jpg){.plain height=500px}
-
----
-
-## For Today...
-
-![](img/docker_0.jpg){.plain height=500px}
-
-
-## Docker Files {.smaller}
-
-```yaml
-FROM python:3.10-slim-bullseye
-
-RUN apt-get update && apt-get install -y \
-    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
-    libblas-dev liblapack-dev gfortran \
-    && rm -rf /var/lib/apt/lists/*
-
-# Set working directory
-WORKDIR /etl
-
-# Copy requirements file and install dependencies
-COPY requirements.txt requirements.txt 
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
-
-# Copy the rest of the application code
-COPY . .
-
-# Expose port 3000
-EXPOSE 3000
-
-# Command to run the python file
-CMD ["python", "etl.py"]
-```
-
-## Docker-Files {.smaller}
-
-```yaml
-services:
-    db:
-        container_name: postgresql_db
-        image: postgres
-        restart: always
-        ports:
-        - 5432:5432
-        environment: 
-        - POSTGRES_USER=${DB_USER}
-        - POSTGRES_PASSWORD=${DB_PASSWORD}
-        - POSTGRES_DB=${DB_NAME}
-        volumes:
-        - ./postgres_data:/var/lib/postgresql/data #persisting data                           
-    pgadmin:  
-        container_name: pgadmin
-        image: dpage/pgadmin4
-        environment:
-        - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
-        - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
-        ports:
-        - 5050:80 # for local browser (80 is the default port of the browsed)
-        volumes:
-        - ./pgadmin_data:/var/lib/pgadmin  # Persisting pgAdmin configuration and sessions
-        depends_on: 
-        - db
-    etl:
-        container_name: etl
-        build: ./etl
-        ports:
-        - 3000:3000
-        volumes:
-            - ./etl:/etl
-        depends_on: 
-        - db
-```
-
-## Execution
-
-```yaml
-docker-compose up
-```
-
-
-# Milestone 2
-
-
-## Switch to M2 branch
-
-```{bash}
-git checkout -b m2
-```
-
-```{bash}
-git pull
-```
-
-## 
-
-<!-- 1. Decide the endpoints (the actions that your product is going to include) -->
-<!-- 1. DB developer: Design the database using Star or any other schema (provide ERD) -->
-<!-- 2. DB developer: Insert Sample to data -->
-<!-- 2. DB developer: Insert Sample to data -->
-<!-- 3. Data Scientist: -->
-<!--     - Select data from DB -->
-<!--     - Insert data to DB -->
-<!--     - Call objects from your module -->
-<!-- 4. API developer: -->
-<!--     - Select data from DB -->
-<!--     - Insert data to DB -->
-<!--     - Update data in DB -->
-<!-- 7. Complete the second chapter of   [\textcolor{blue}{Developing Python Packages}](https://app.datacamp.com/learn/courses/developing-python-packages) -->
-
-
-
-
-<!-- ## Milestone 3 | 08Apr-20Apr -->
-
-<!-- 7. Complete the third chapter of  [\textcolor{blue}{Developing Python Packages}](https://app.datacamp.com/learn/courses/developing-python-packages) -->
-<!-- 6. -->
-
-<!-- ## Milestone 4 | 22Apr-04May -->
-
-<!-- 7. Complete the third chapter of   [\textcolor{blue}{Developing Python Packages}](https://app.datacamp.com/learn/courses/developing-python-packages) -->
-<!-- 6. Finish documentation -->
 
