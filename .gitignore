@@ -1,4 +1,6 @@
-pgadmin_data/ # 
+
+.vscode
+pgadmin_data/
 postgres_data/
 
 
@@ -12,7 +14,7 @@ slides/.quarto
 *.so
 
 
-
+tutorial/
 # Distribution / packaging
 .Python
 build/
@@ -143,7 +145,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+# .env
 .envrc
 .venv
 env/
