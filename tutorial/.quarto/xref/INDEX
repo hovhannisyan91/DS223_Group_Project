@@ -25,5 +25,23 @@
   },
   "content/04_backend.qmd": {
     "04_backend.html": "f506f349"
+  },
+  "content/01_problem_definition.qmd": {
+    "01_problem_definition.html": "dc6c2a16"
+  },
+  "content/02_docker.qmd": {
+    "02_docker.html": "31e88a88"
+  },
+  "content/03_git.qmd": {
+    "03_git.html": "bf42203d"
+  },
+  "content/04_database.qmd": {
+    "04_database.html": "39b03748"
+  },
+  "content/05_frontend.qmd": {
+    "05_frontend.html": "b7416d7f"
+  },
+  "content/06_backend.qmd": {
+    "06_backend.html": "59d00395"
   }
 }

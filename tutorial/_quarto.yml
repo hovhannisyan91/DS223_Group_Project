@@ -29,14 +29,18 @@ website:
       #   href: index.qmd
       # - text: "Syllabus"
       #   href: content/syllabus.qmd
+      - text: "Product"
+        href: content/01_problem_definition.qmd
       - text: "Docker"
-        href: content/01_docker.qmd
+        href: content/02_docker.qmd
+      - text: "Git"
+        href: content/03_git.qmd
       - text: "Database | PostgreSQL"
-        href: content/02_database.qmd
+        href: content/04_database.qmd
       - text: "Frontend | Streamlit"
-        href: content/03_frontend.qmd
+        href: content/05_frontend.qmd
       - text: "Backend | FastAPI"
-        href: content/04_backend.qmd
+        href: content/06_backend.qmd
       
     right:
       - icon: github
