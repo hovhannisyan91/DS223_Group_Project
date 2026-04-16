@@ -58,86 +58,86 @@
   {
     "objectID": "content/04_database.html",
     "href": "content/04_database.html",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "",
-    "text": "At this page focuses on setting up and interacting with a PostgreSQL database inside a Dockerized environment.\nIt covers:\n\nRunning PostgreSQL with Docker\n\nAccessing the database using pgAdmin\n\nCreating tables using SQLAlchemy (ETL process)\n\nLoading and viewing data\n\nThis database follows a star-schema-like structure, commonly used in analytics systems, where a central fact table (sales) connects multiple dimension tables. :contentReferenceoaicite:0"
+    "text": "At this page focuses on setting up and interacting with a PostgreSQL database for the Bayesian Carousel Bandits project.\nIt covers:\n\nRunning PostgreSQL with Docker\nAccessing the database using pgAdmin\nDesigning the relational schema for the carousel application\nCreating tables using SQL\nUnderstanding how the database supports the Streamlit MVP and the future FastAPI backend\n\nThis database is designed for an interactive product where users create carousel projects, display a subset of alternatives, collect click feedback, and analyze the results over time.\n\n\nThe database is built around the lifecycle of a carousel experiment.\nA user creates a carousel project, defines how many alternatives exist, chooses how many are visible per round, and then records user interaction events as the experiment runs.\nThe schema includes the following main entities:\n\ncarousels — stores carousel projects\nalternatives — stores the bandit alternatives belonging to a carousel\ninteraction_events — stores each user interaction round\nevent_displayed_alternatives — stores which alternatives were shown during each event and whether they were clicked\n\nThis structure is appropriate for:\n\napplication state,\nonline learning updates,\nand future analytics and reporting"
   },
   {
     "objectID": "content/04_database.html#overview",
     "href": "content/04_database.html#overview",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "",
-    "text": "At this page focuses on setting up and interacting with a PostgreSQL database inside a Dockerized environment.\nIt covers:\n\nRunning PostgreSQL with Docker\n\nAccessing the database using pgAdmin\n\nCreating tables using SQLAlchemy (ETL process)\n\nLoading and viewing data\n\nThis database follows a star-schema-like structure, commonly used in analytics systems, where a central fact table (sales) connects multiple dimension tables. :contentReferenceoaicite:0"
+    "text": "At this page focuses on setting up and interacting with a PostgreSQL database for the Bayesian Carousel Bandits project.\nIt covers:\n\nRunning PostgreSQL with Docker\nAccessing the database using pgAdmin\nDesigning the relational schema for the carousel application\nCreating tables using SQL\nUnderstanding how the database supports the Streamlit MVP and the future FastAPI backend\n\nThis database is designed for an interactive product where users create carousel projects, display a subset of alternatives, collect click feedback, and analyze the results over time.\n\n\nThe database is built around the lifecycle of a carousel experiment.\nA user creates a carousel project, defines how many alternatives exist, chooses how many are visible per round, and then records user interaction events as the experiment runs.\nThe schema includes the following main entities:\n\ncarousels — stores carousel projects\nalternatives — stores the bandit alternatives belonging to a carousel\ninteraction_events — stores each user interaction round\nevent_displayed_alternatives — stores which alternatives were shown during each event and whether they were clicked\n\nThis structure is appropriate for:\n\napplication state,\nonline learning updates,\nand future analytics and reporting"
   },
   {
     "objectID": "content/04_database.html#running-the-database",
     "href": "content/04_database.html#running-the-database",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Running the Database",
-    "text": "Running the Database\nStart all services (including PostgreSQL and pgAdmin):\ndocker-compose up --build"
+    "text": "Running the Database\nStart all services, including PostgreSQL and pgAdmin:\ndocker compose up --build\nIf the services are already built, you can also run:\ndocker compose up"
   },
   {
     "objectID": "content/04_database.html#accessing-postgresql-via-pgadmin",
     "href": "content/04_database.html#accessing-postgresql-via-pgadmin",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Accessing PostgreSQL via pgAdmin",
-    "text": "Accessing PostgreSQL via pgAdmin\nOpen pgAdmin in your browser:\nhttp://localhost:5050\n\nDefault Credentials\n\nEmail: admin@admin.com\n\nPassword: admin"
+    "text": "Accessing PostgreSQL via pgAdmin\nOpen pgAdmin in your browser:\nhttp://localhost:5050\n\nDefault Credentials\n\nEmail: admin@admin.com\nPassword: admin"
   },
   {
     "objectID": "content/04_database.html#creating-a-server-in-pgadmin",
     "href": "content/04_database.html#creating-a-server-in-pgadmin",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Creating a Server in pgAdmin",
-    "text": "Creating a Server in pgAdmin\nWhen accessing pgAdmin for the first time:\n\nRight-click on Servers\n\nClick Create → Server\n\n\nGeneral Tab\n\nName: Postgres Server\n\n\n\nConnection Tab\n\nHost: db\n\nPort: 5432\n\nUsername: value of DB_USER\n\nPassword: value of DB_PASSWORD\n\n\n\n\nServer Setup"
+    "text": "Creating a Server in pgAdmin\nWhen opening pgAdmin for the first time:\n\nRight-click on Servers\nClick Create → Server\n\n\nGeneral Tab\n\nName: Carousel PostgreSQL\n\n\n\nConnection Tab\n\nHost: db\nPort: 5432\nUsername: value of DB_USER\nPassword: value of DB_PASSWORD\n\n\n\n\npgAdmin Server Setup"
   },
   {
     "objectID": "content/04_database.html#environment-variables",
     "href": "content/04_database.html#environment-variables",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Environment Variables",
-    "text": "Environment Variables\nCreate a .env file in the root directory:\nDB_USER=postgres\nDB_PASSWORD=postgres\nDB_NAME=analytics_db"
+    "text": "Environment Variables\nCreate a .env file in the project root:\nDB_USER=postgres\nDB_PASSWORD=postgres\nDB_NAME=carousel\nPGADMIN_DEFAULT_EMAIL=admin@admin.com\nPGADMIN_DEFAULT_PASSWORD=admin\nThese values will later be reused in:\n\nDocker Compose\nFastAPI database connection settings\npgAdmin server configuration"
   },
   {
     "objectID": "content/04_database.html#database-schema-sql-representation",
     "href": "content/04_database.html#database-schema-sql-representation",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Database Schema (SQL Representation)",
-    "text": "Database Schema (SQL Representation)\nBelow is the SQL equivalent of your current SQLAlchemy models:\nCREATE TABLE employees (\n    employee_id SERIAL PRIMARY KEY,\n    first_name VARCHAR,\n    last_name VARCHAR,\n    email VARCHAR,\n    salary FLOAT\n);\n\nCREATE TABLE customers (\n    customer_id INT PRIMARY KEY,\n    customer_name VARCHAR,\n    address VARCHAR,\n    city VARCHAR,\n    zip_code VARCHAR\n);\n\nCREATE TABLE products (\n    product_id INT PRIMARY KEY,\n    product_name VARCHAR,\n    price FLOAT,\n    description VARCHAR,\n    category VARCHAR\n);\n\nCREATE TABLE orders (\n    order_id INT PRIMARY KEY,\n    order_date TIMESTAMP,\n    year INT,\n    quarter INT,\n    month VARCHAR\n);\n\nCREATE TABLE sales (\n    transaction_id INT PRIMARY KEY,\n    order_id INT REFERENCES orders(order_id),\n    product_id INT REFERENCES products(product_id),\n    customer_id INT REFERENCES customers(customer_id),\n    employee_id INT REFERENCES employees(employee_id),\n    total_sales FLOAT,\n    quantity INT,\n    discount FLOAT\n);"
+    "text": "Database Schema (SQL Representation)\nBelow is the SQL version of the proposed schema:\nCREATE TABLE carousels (\n    carousel_id SERIAL PRIMARY KEY,\n    name VARCHAR(255) NOT NULL,\n    total_alternatives INT NOT NULL CHECK (total_alternatives &gt; 0),\n    visible_count INT NOT NULL CHECK (visible_count &gt; 0),\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    is_active BOOLEAN DEFAULT TRUE\n);\n\nCREATE TABLE alternatives (\n    alt_id SERIAL PRIMARY KEY,\n    carousel_id INT NOT NULL REFERENCES carousels(carousel_id) ON DELETE CASCADE,\n    title VARCHAR(255) NOT NULL,\n    alpha FLOAT NOT NULL DEFAULT 1,\n    beta FLOAT NOT NULL DEFAULT 1,\n    impressions INT NOT NULL DEFAULT 0,\n    clicks INT NOT NULL DEFAULT 0,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nCREATE TABLE interaction_events (\n    event_id SERIAL PRIMARY KEY,\n    carousel_id INT NOT NULL REFERENCES carousels(carousel_id) ON DELETE CASCADE,\n    round_number INT NOT NULL,\n    clicked_alt_id INT NULL REFERENCES alternatives(alt_id) ON DELETE SET NULL,\n    reward INT NOT NULL CHECK (reward IN (0, 1)),\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\nCREATE TABLE event_displayed_alternatives (\n    event_id INT NOT NULL REFERENCES interaction_events(event_id) ON DELETE CASCADE,\n    alt_id INT NOT NULL REFERENCES alternatives(alt_id) ON DELETE CASCADE,\n    slot_position INT NOT NULL,\n    was_clicked BOOLEAN NOT NULL DEFAULT FALSE,\n    PRIMARY KEY (event_id, alt_id)\n);\n\nSchema Design\nThis schema supports both the current MVP and the future full-stack product.\n\n\ncarousels\nStores the main carousel project settings.\nColumns:\n\ncarousel_id — unique identifier\nname — project name\ntotal_alternatives — total number of bandits in the project\nvisible_count — how many alternatives are shown each round\ncreated_at — creation timestamp\nis_active — whether the carousel is active\n\n\nalternatives\nStores all bandit alternatives for a given carousel.\nColumns:\n\nalt_id — unique alternative identifier\ncarousel_id — parent carousel\ntitle — alternative label\nalpha — Beta prior/posterior alpha parameter\nbeta — Beta prior/posterior beta parameter\nimpressions — number of times shown\nclicks — number of clicks\ncreated_at — creation timestamp\n\n\n\ninteraction_events\nStores one row per interaction round.\nColumns:\n\nevent_id — unique interaction event\ncarousel_id — associated carousel\nround_number — round index\nclicked_alt_id — clicked alternative, if any\nreward — 1 for click, 0 for no click\ncreated_at — interaction timestamp\n\n\n\nevent_displayed_alternatives\nStores which alternatives were displayed in an event.\nColumns:\n\nevent_id — parent event\nalt_id — displayed alternative\nslot_position — position in the visible carousel\nwas_clicked — whether that displayed alternative received the click\n\nThis table is important because it lets us reconstruct: - what was shown, - in what order, - and which alternative was selected"
   },
   {
     "objectID": "content/04_database.html#schema-design",
     "href": "content/04_database.html#schema-design",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Schema Design",
-    "text": "Schema Design\nThis schema represents a fact-dimension model:\n\n\n\nStar Schema\n\n\n\nFact Table\n\nsales → contains transactional data\n\n\n\nDimension Tables\n\ncustomers\nproducts\nemployees\norders\n\nThis structure is ideal for analytics and reporting."
+    "text": "Schema Design\nThis schema supports both the current MVP and the future full-stack product.\n\ncarousels\nStores the main carousel project settings.\nColumns:\n\ncarousel_id — unique identifier\nname — project name\ntotal_alternatives — total number of bandits in the project\nvisible_count — how many alternatives are shown each round\ncreated_at — creation timestamp\nis_active — whether the carousel is active\n\n\n\nalternatives\nStores all bandit alternatives for a given carousel.\nColumns:\n\nalt_id — unique alternative identifier\ncarousel_id — parent carousel\ntitle — alternative label\nalpha — Beta prior/posterior alpha parameter\nbeta — Beta prior/posterior beta parameter\nimpressions — number of times shown\nclicks — number of clicks\ncreated_at — creation timestamp\n\n\n\ninteraction_events\nStores one row per interaction round.\nColumns:\n\nevent_id — unique interaction event\ncarousel_id — associated carousel\nround_number — round index\nclicked_alt_id — clicked alternative, if any\nreward — 1 for click, 0 for no click\ncreated_at — interaction timestamp\n\n\n\nevent_displayed_alternatives\nStores which alternatives were displayed in an event.\nColumns:\n\nevent_id — parent event\nalt_id — displayed alternative\nslot_position — position in the visible carousel\nwas_clicked — whether that displayed alternative received the click\n\nThis table is important because it lets us reconstruct: - what was shown, - in what order, - and which alternative was selected"
   },
   {
     "objectID": "content/04_database.html#creating-tables-using-sqlalchemy",
     "href": "content/04_database.html#creating-tables-using-sqlalchemy",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Creating Tables Using SQLAlchemy",
-    "text": "Creating Tables Using SQLAlchemy\nYour database schema is defined using SQLAlchemy models:\nfrom sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey\nfrom sqlalchemy.orm import relationship\nfrom Database.database import Base\n\nclass Employee(Base):\n    __tablename__ = \"employees\"\n\n    employee_id = Column(Integer, primary_key=True, autoincrement=True)\n    first_name = Column(String)\n    last_name = Column(String)\n    email = Column(String)\n    salary = Column(Float)\n\nclass Customer(Base):\n    __tablename__ = \"customers\"\n\n    customer_id = Column(Integer, primary_key=True)\n    customer_name = Column(String)\n    address = Column(String)\n    city = Column(String)\n    zip_code = Column(String)\n\nclass Product(Base):\n    __tablename__ = \"products\"\n\n    product_id = Column(Integer, primary_key=True)\n    product_name = Column(String)\n    price = Column(Float)\n    description = Column(String)\n    category = Column(String)\n\nclass Order(Base):\n    __tablename__ = \"orders\"\n\n    order_id = Column(Integer, primary_key=True)\n    order_date = Column(DateTime)\n    year = Column(Integer)\n    quarter = Column(Integer)\n    month = Column(String)\n\nclass Sale(Base):\n    __tablename__ = \"sales\"\n\n    transaction_id = Column(Integer, primary_key=True)\n    order_id = Column(Integer, ForeignKey('orders.order_id'))\n    product_id = Column(Integer, ForeignKey('products.product_id'))\n    customer_id = Column(Integer, ForeignKey('customers.customer_id'))\n    employee_id = Column(Integer, ForeignKey('employees.employee_id'))\n    total_sales = Column(Float)\n    quantity = Column(Integer)\n    discount = Column(Float)\n\n    order = relationship(\"Order\")\n    product = relationship(\"Product\")\n    customer = relationship(\"Customer\")\n    employee = relationship(\"Employee\")"
+    "text": "Creating Tables Using SQLAlchemy\n\nFolder sructure\n├── etl/\n│   ├── data/\n│   │   ├── alternatives.csv\n│   │   ├── carousels.csv\n│   ├── Database/\n│   │   ├── __init__.py\n│   │   ├── database.py\n│   │   └── models.py\n│   ├── __init__.py\n│   ├── .env\n│   ├── .python-version\n│   ├── Dockerfile\n│   ├── create_tables.py\n│   ├── etl.py\n│   ├── pyproject.toml\n│   ├── README.md\n│   ├── requirements.txt\n│   └── uv.lock\n\nThe same schema can later be represented with SQLAlchemy models.\n\n\n\nDatabase/database.py\nConfiguring the Database\n\"\"\"\nDatabase Configuration\n\"\"\"\n\nimport sqlalchemy as sql\nimport sqlalchemy.ext.declarative as declarative\nimport sqlalchemy.orm as orm\nfrom dotenv import load_dotenv\nimport os\n\n\ndef get_db():\n    \"\"\"\n    Function to get a database session.\n    \"\"\"\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\n\n\n# Load environment variables from .env file\nload_dotenv(\".env\")\n\n# Get the database URL from environment variables\nDATABASE_URL = os.environ.get(\"DATABASE_URL\")\n\n# Create the SQLAlchemy engine\nengine = sql.create_engine(DATABASE_URL)\n\n# Base class for declarative models\nBase = declarative.declarative_base()\n\n# SessionLocal for database operations\nSessionLocal = orm.sessionmaker(autocommit=False, autoflush=False, bind=engine)\n\n\nDatabase/models.py\nfrom sqlalchemy import (\n    Column,\n    Integer,\n    String,\n    Boolean,\n    Float,\n    ForeignKey,\n    Timestamp\n)\nfrom sqlalchemy.sql import func\nfrom sqlalchemy.orm import relationship\nfrom Database.database import Base\n\n\nclass Carousel(Base):\n    __tablename__ = \"carousels\"\n\n    carousel_id = Column(Integer, primary_key=True, autoincrement=True)\n    name = Column(String(255), nullable=False)\n    total_alternatives = Column(Integer, nullable=False)\n    visible_count = Column(Integer, nullable=False)\n    created_at = Column(Timestamp, server_default=func.current_timestamp())\n    is_active = Column(Boolean, default=True)\n\n    alternatives = relationship(\"Alternative\", back_populates=\"carousel\", cascade=\"all, delete\")\n    events = relationship(\"InteractionEvent\", back_populates=\"carousel\", cascade=\"all, delete\")\n\n\nclass Alternative(Base):\n    __tablename__ = \"alternatives\"\n\n    alt_id = Column(Integer, primary_key=True, autoincrement=True)\n    carousel_id = Column(Integer, ForeignKey(\"carousels.carousel_id\", ondelete=\"CASCADE\"), nullable=False)\n    title = Column(String(255), nullable=False)\n    alpha = Column(Float, default=1, nullable=False)\n    beta = Column(Float, default=1, nullable=False)\n    impressions = Column(Integer, default=0, nullable=False)\n    clicks = Column(Integer, default=0, nullable=False)\n    created_at = Column(Timestamp, server_default=func.current_timestamp())\n\n    carousel = relationship(\"Carousel\", back_populates=\"alternatives\")\n\n\nclass InteractionEvent(Base):\n    __tablename__ = \"interaction_events\"\n\n    event_id = Column(Integer, primary_key=True, autoincrement=True)\n    carousel_id = Column(Integer, ForeignKey(\"carousels.carousel_id\", ondelete=\"CASCADE\"), nullable=False)\n    round_number = Column(Integer, nullable=False)\n    clicked_alt_id = Column(Integer, ForeignKey(\"alternatives.alt_id\", ondelete=\"SET NULL\"), nullable=True)\n    reward = Column(Integer, nullable=False)\n    created_at = Column(Timestamp, server_default=func.current_timestamp())\n\n    carousel = relationship(\"Carousel\", back_populates=\"events\")"
   },
   {
     "objectID": "content/04_database.html#executable-table-creation",
     "href": "content/04_database.html#executable-table-creation",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Executable Table Creation",
-    "text": "Executable Table Creation\nRun the following to create all tables in PostgreSQL:\nfrom Database.database import Base, engine\n\nBase.metadata.create_all(engine)"
+    "text": "Executable Table Creation\nTo create all tables:\nfrom Database.database import Base, engine\n\nBase.metadata.create_all(engine)"
   },
   {
     "objectID": "content/04_database.html#inserting-sample-data",
     "href": "content/04_database.html#inserting-sample-data",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Inserting Sample Data",
-    "text": "Inserting Sample Data\nINSERT INTO employees (first_name, last_name, email, salary)\nVALUES ('John', 'Doe', 'john@example.com', 5000);\n\nINSERT INTO customers (customer_id, customer_name, city)\nVALUES (1, 'Alice', 'New York');\n\nINSERT INTO products (product_id, product_name, price)\nVALUES (1, 'Protein Powder', 30.0);\n\nINSERT INTO orders (order_id, order_date, year, quarter, month)\nVALUES (1, NOW(), 2024, 1, 'January');\n\nINSERT INTO sales (transaction_id, order_id, product_id, customer_id, employee_id, total_sales, quantity, discount)\nVALUES (1, 1, 1, 1, 1, 30.0, 1, 0.0);"
+    "text": "Inserting Sample Data\nBelow is a small example of sample data for one carousel:\nINSERT INTO carousels (name, total_alternatives, visible_count)\nVALUES ('Homepage Promo Carousel', 10, 4);\n\nINSERT INTO alternatives (carousel_id, title)\nVALUES\n    (1, 'Alternative 1'),\n    (1, 'Alternative 2'),\n    (1, 'Alternative 3'),\n    (1, 'Alternative 4'),\n    (1, 'Alternative 5'),\n    (1, 'Alternative 6'),\n    (1, 'Alternative 7'),\n    (1, 'Alternative 8'),\n    (1, 'Alternative 9'),\n    (1, 'Alternative 10');\n\nINSERT INTO interaction_events (carousel_id, round_number, clicked_alt_id, reward)\nVALUES (1, 1, 2, 1);\n\nINSERT INTO event_displayed_alternatives (event_id, alt_id, slot_position, was_clicked)\nVALUES\n    (1, 1, 1, FALSE),\n    (1, 2, 2, TRUE),\n    (1, 3, 3, FALSE),\n    (1, 4, 4, FALSE);"
   },
   {
     "objectID": "content/04_database.html#viewing-tables-in-pgadmin",
     "href": "content/04_database.html#viewing-tables-in-pgadmin",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Viewing Tables in pgAdmin",
-    "text": "Viewing Tables in pgAdmin\nAfter creating tables and inserting data:\n\nOpen pgAdmin\n\nNavigate:\nServers → Databases → analytics_db → Schemas → public → Tables\nRight-click a table → View/Edit Data → All Rows"
+    "text": "Viewing Tables in pgAdmin\nAfter creating the tables and inserting data:\n\nOpen pgAdmin\nNavigate:\nServers → Databases → carousel_db → Schemas → public → Tables\nRight-click a table\nChoose View/Edit Data → All Rows"
   },
   {
     "objectID": "content/04_database.html#running-sql-queries",
@@ -149,9 +149,9 @@
   {
     "objectID": "content/04_database.html#summary",
     "href": "content/04_database.html#summary",
-    "title": "PostgreSQL Database Setup & Exploration Tutorial",
+    "title": "Database | PostgreSQL",
     "section": "Summary",
-    "text": "Summary\nYou have now:\n\nSet up PostgreSQL using Docker\n\nConnected via pgAdmin\n\nCreated tables using SQLAlchemy\n\nUnderstood a star-schema database design\n\nInserted and queried data\n\nThis database structure serves as a strong foundation for building a marketing analytics system with predictive modeling and reporting capabilities."
+    "text": "Summary\nYou now have a relational schema for the Bayesian Carousel Bandits project.\nThis database supports:\n\ncarousel project creation\nalternative storage\ninteraction event logging\nclick/no-click reward tracking\nposterior parameter persistence\nfuture backend and analytics integration\n\nIt forms the foundation for moving the project from a local Streamlit MVP to a full product with PostgreSQL, FastAPI, and Docker."
   },
   {
     "objectID": "content/02_docker.html",
@@ -354,7 +354,7 @@
     "href": "content/05_frontend.html",
     "title": "Intro to Streamlit",
     "section": "",
-    "text": "file structure\nexplain each file\nUrls for the features\nstep by step compnent development based on our app\nthen final version\nlater adding connecting backend with front end"
+    "text": "The frontend of the project is built with Streamlit and organized as a multi-page application.\nIts role is to provide the user interface for:\n\ncreating carousel projects,\ninteracting with the carousel bandits,\nand analyzing the results visually.\n\nThe current version is an MVP prototype, which already demonstrates the main product flow. Later, this frontend will be connected to a backend API and a PostgreSQL database.\nLive App"
   },
   {
     "objectID": "content/05_frontend.html#live-app",
@@ -719,5 +719,96 @@
     "title": "Introduction to Git",
     "section": "Full Workflow Diagram",
     "text": "Full Workflow Diagram\n\n\n\n\n\nflowchart TD\n    A[Student pulls latest branch] --&gt; B[Create feature branch]\n    B --&gt; C[Develop locally]\n    C --&gt; D[git add / commit / push]\n    D --&gt; E[Open Pull Request]\n    E --&gt; F[Product Manager reviews]\n    F --&gt; G[Merge approved changes]\n    G --&gt; H[Team pulls latest updates]"
+  },
+  {
+    "objectID": "content/04_database.html#database-design",
+    "href": "content/04_database.html#database-design",
+    "title": "Database | PostgreSQL",
+    "section": "Database Design",
+    "text": "Database Design\nThe database is built around the lifecycle of a carousel experiment.\nA user creates a carousel project, defines how many alternatives exist, chooses how many are visible per round, and then records user interaction events as the experiment runs.\nThe schema includes the following main entities:\n\ncarousels — stores carousel projects\nalternatives — stores the bandit alternatives belonging to a carousel\ninteraction_events — stores each user interaction round\nevent_displayed_alternatives — stores which alternatives were shown during each event and whether they were clicked\n\nThis structure is appropriate for:\n\napplication state,\nonline learning updates,\nand future analytics and reporting"
+  },
+  {
+    "objectID": "content/04_database.html#why-this-schema-fits-the-product",
+    "href": "content/04_database.html#why-this-schema-fits-the-product",
+    "title": "Database | PostgreSQL",
+    "section": "Why This Schema Fits the Product",
+    "text": "Why This Schema Fits the Product\nThe current Streamlit MVP stores state in memory and session state.\nFor the full product, PostgreSQL should persist:\n\ncarousel definitions\nalternative-level posterior parameters\ninteraction history\nevent-level displayed alternatives\nrewards and clicks for analysis\n\nThis allows the team to move from a local prototype to a real application with: - reproducible data, - analytics history, - API support, - and multi-user capability"
+  },
+  {
+    "objectID": "content/04_database.html#erd-explanation",
+    "href": "content/04_database.html#erd-explanation",
+    "title": "Database | PostgreSQL",
+    "section": "ERD Explanation",
+    "text": "ERD Explanation\nThe relationships are:\n\none carousel has many alternatives\none carousel has many interaction_events\none interaction_event has many displayed alternatives\none displayed alternative references one record in alternatives\none event may optionally store one clicked alternative"
+  },
+  {
+    "objectID": "content/04_database.html#erd-code",
+    "href": "content/04_database.html#erd-code",
+    "title": "Database | PostgreSQL",
+    "section": "ERD Code",
+    "text": "ERD Code\nUse this separately if you want to render the ERD directly in Quarto with Mermaid:\n\n\n\n\n\nerDiagram\n    CAROUSELS ||--o{ ALTERNATIVES : contains\n    CAROUSELS ||--o{ INTERACTION_EVENTS : records\n    INTERACTION_EVENTS ||--o{ EVENT_DISPLAYED_ALTERNATIVES : shows\n    ALTERNATIVES ||--o{ EVENT_DISPLAYED_ALTERNATIVES : displayed_in\n    ALTERNATIVES ||--o{ INTERACTION_EVENTS : clicked_in\n\n    CAROUSELS {\n        int carousel_id PK\n        varchar name\n        int total_alternatives\n        int visible_count\n        timestamp created_at\n        boolean is_active\n    }\n\n    ALTERNATIVES {\n        int alt_id PK\n        int carousel_id FK\n        varchar title\n        float alpha\n        float beta\n        int impressions\n        int clicks\n        timestamp created_at\n    }\n\n    INTERACTION_EVENTS {\n        int event_id PK\n        int carousel_id FK\n        int round_number\n        int clicked_alt_id FK\n        int reward\n        timestamp created_at\n    }\n\n    EVENT_DISPLAYED_ALTERNATIVES {\n        int event_id PK, FK\n        int alt_id PK, FK\n        int slot_position\n        boolean was_clicked\n    }"
+  },
+  {
+    "objectID": "content/04_database.html#running-queries-in-pgadmin",
+    "href": "content/04_database.html#running-queries-in-pgadmin",
+    "title": "Database | PostgreSQL",
+    "section": "Running Queries in pgAdmin",
+    "text": "Running Queries in pgAdmin\nOpen the Query Tool and try:\nSELECT * FROM carousels;\nSELECT * FROM alternatives;\nSELECT * FROM interaction_events;\nSELECT * FROM event_displayed_alternatives;\n\nExample Analytical Query\nThis query returns alternative-level performance for one carousel:\nSELECT\n    a.alt_id,\n    a.title,\n    a.impressions,\n    a.clicks,\n    CASE\n        WHEN a.impressions = 0 THEN 0\n        ELSE ROUND((a.clicks::numeric / a.impressions::numeric), 4)\n    END AS empirical_ctr,\n    ROUND((a.alpha::numeric / (a.alpha + a.beta)::numeric), 4) AS posterior_mean\nFROM alternatives a\nWHERE a.carousel_id = 1\nORDER BY posterior_mean DESC;\n\n\nExample Event-Level Query\nThis query shows which alternatives were displayed in each round:\nSELECT\n    e.event_id,\n    e.round_number,\n    d.slot_position,\n    d.alt_id,\n    d.was_clicked\nFROM interaction_events e\nJOIN event_displayed_alternatives d\n    ON e.event_id = d.event_id\nWHERE e.carousel_id = 1\nORDER BY e.round_number, d.slot_position;"
+  },
+  {
+    "objectID": "content/05_frontend.html#file-structure",
+    "href": "content/05_frontend.html#file-structure",
+    "title": "Intro to Streamlit",
+    "section": "File Structure",
+    "text": "File Structure\nThe frontend is organized as follows:\napp/front/\n├── main.py\n├── bandit_utils.py\n├── Dockerfile\n├── pyproject.toml\n├── README.md\n├── uv.lock\n└── pages/\n    ├── 1_Create_Carousels.py\n    ├── 2_Interaction.py\n    └── 3_Analytics.py\nThis structure keeps the code modular and easier to maintain.\nThe idea is simple:\n\nmain.py is the Streamlit entry point\npages/ stores each page of the app\nbandit_utils.py stores shared logic used across pages\nthe remaining files support environment, packaging, and deployment\n\n\n\n\n\n\nflowchart TD\n    A[main.py] --&gt; B[pages/1_Create_Carousels.py]\n    A --&gt; C[pages/2_Interaction.py]\n    A --&gt; D[pages/3_Analytics.py]\n    B --&gt; E[bandit_utils.py]\n    C --&gt; E\n    D --&gt; E"
+  },
+  {
+    "objectID": "content/05_frontend.html#explanation-of-each-file",
+    "href": "content/05_frontend.html#explanation-of-each-file",
+    "title": "Intro to Streamlit",
+    "section": "Explanation of Each File",
+    "text": "Explanation of Each File\n\nmain.py\nThis is the main entry point of the Streamlit app.\nIts job is to:\n\nstart the application,\ndefine the landing page,\nand let Streamlit automatically discover the files inside the pages/ folder.\n\nIn Streamlit, once the pages/ folder exists, each file inside it becomes a separate page in the application.\n\n\nbandit_utils.py\nThis file contains the reusable logic shared across all pages.\nIt is responsible for operations such as:\n\ninitializing app state,\ncreating carousel objects,\nsampling visible alternatives,\nretrieving carousel statistics,\nupdating rewards after feedback,\nbuilding summary tables,\nselecting the active carousel,\nidentifying the champion bandit,\npreparing posterior distribution points for visualization.\n\nThis keeps the UI code cleaner because the logic is not repeated inside each page.\n\n\npages/1_Create_Carousels.py\nThis page is responsible for the setup and management of carousel projects.\nIt allows the user to:\n\ncreate a new carousel,\ndefine the total number of alternatives,\ndefine how many alternatives are visible at each round,\nlist existing carousels,\ninspect alternatives,\nreset a selected carousel,\nand prepare the project for interaction.\n\n\n\npages/2_Interaction.py\nThis page is the live interaction layer of the product.\nIt allows the user to:\n\nchoose a carousel,\nsee the visible alternatives,\nclick on one of the shown alternatives,\nmove to the next round with no click,\nor resample the visible set without updating.\n\nThis is the page where the Bayesian bandit behavior becomes interactive.\n\n\npages/3_Analytics.py\nThis page is the reporting and visualization layer.\nIt shows:\n\ntotal impressions,\ntotal clicks,\naverage reward,\nchampion bandit,\nposterior mean comparison,\nclick comparison,\nBeta posterior distributions,\ndetailed result tables,\ncumulative reward over time.\n\nThis page helps users interpret the results of the carousel experiment.\n\n\nSupporting Files\nThe remaining files are used for project setup and packaging:\n\nDockerfile — container setup for deployment\npyproject.toml — project dependencies and metadata\nuv.lock — locked dependency versions when using uv\nREADME.md — project documentation"
+  },
+  {
+    "objectID": "content/05_frontend.html#urls-for-the-features",
+    "href": "content/05_frontend.html#urls-for-the-features",
+    "title": "Intro to Streamlit",
+    "section": "URLs for the Features",
+    "text": "URLs for the Features\nThe deployed prototype currently includes the following pages.\n\nHome / Main App\nhttps://carousel-mvp.streamlit.app\n\n\nCreate Carousels Page\nhttps://carousel-mvp.streamlit.app\nThis is the page where users define:\n\ncarousel name,\nnumber of alternatives,\nvisible count.\n\n\n\nInteraction Page\nhttps://carousel-mvp.streamlit.app/Interaction\nThis is the page where the user interacts with the visible bandits and generates click feedback.\n\n\nAnalytics Page\nhttps://carousel-mvp.streamlit.app/Analytics\nThis is the page where the results are summarized and visualized."
+  },
+  {
+    "objectID": "content/05_frontend.html#step-by-step-component-development",
+    "href": "content/05_frontend.html#step-by-step-component-development",
+    "title": "Intro to Streamlit",
+    "section": "Step-by-Step Component Development",
+    "text": "Step-by-Step Component Development\nThe frontend can be understood as being developed in stages.\n\nStep 1 | Create the basic Streamlit app\nThe first step is to create a minimal Streamlit application with:\n\na main.py file,\na pages/ folder,\nand one test page.\n\nThe goal here is simply to make sure the app runs and multi-page navigation works.\n\n\nStep 2 | Build the Create Carousels page\nThe next step is to build the setup page.\nThis page is important because it defines the core user input:\n\nproject name,\ntotal alternatives,\nvisible area size.\n\nThis is where the app starts to become a product instead of just a demo.\n\n\nStep 3 | Add shared logic in bandit_utils.py\nOnce the first page works, common logic should be moved into bandit_utils.py.\nThis makes the application cleaner because reusable functions such as:\n\ninit_state,\ncreate_carousel,\nsample_carousel,\nget_stats_df,\nselect_carousel_widget\n\ncan be imported by multiple pages.\n\n\nStep 4 | Build the Interaction page\nAfter the carousel creation flow is ready, the next step is to build the live interaction page.\nThis page needs to:\n\ndisplay the currently selected bandits,\nshow current metrics,\nrecord click and no-click events,\nupdate posterior values,\nmove the carousel to the next round.\n\nThis is the core dynamic component of the frontend.\n\n\nStep 5 | Build the Analytics page\nOnce interactions are recorded, the next step is to add visualization.\nThe analytics page should begin with simple outputs such as:\n\ntotal clicks,\ntotal impressions,\nCTR,\nposterior mean.\n\nThen it can be extended with richer visuals such as:\n\nchampion bandit highlighting,\nBeta posterior curves,\ncumulative reward over time.\n\n\n\nStep 6 | Improve UI and readability\nAfter the basic functionality works, the interface should be improved by:\n\nusing better titles and captions,\nadding metrics,\norganizing results with columns,\nimproving button labels,\nand making the pages more visually clear.\n\n\n\nStep 7 | Add placeholders for future backend integration\nEven in the MVP stage, it is useful to think ahead.\nFor example:\n\ndelete buttons can be placeholders,\nstate management can later move to the backend,\npage actions can later be replaced with API calls.\n\nThis makes the transition to the full product easier.\n\n\n\n\n\nflowchart LR\n    A[Create Carousels] --&gt; B[Shared Logic]\n    B --&gt; C[Interaction]\n    C --&gt; D[Analytics]\n    D --&gt; E[Backend Integration]"
+  },
+  {
+    "objectID": "content/05_frontend.html#final-mvp-version",
+    "href": "content/05_frontend.html#final-mvp-version",
+    "title": "Intro to Streamlit",
+    "section": "Final MVP Version",
+    "text": "Final MVP Version\nThe current MVP frontend already demonstrates the complete product flow.\n\nPage 1 | Create Carousels\nThis page handles project creation and management.\nUsers can:\n\ncreate new carousels,\ndefine project settings,\nbrowse existing projects,\ninspect alternatives,\nreset projects.\n\n\n\n\nPage 2 | Interaction\nThis page runs the live bandit loop.\nUsers can:\n\nsee which alternatives are currently visible,\nclick an alternative,\nskip a round with no click,\nobserve how the metrics change.\n\n\n\n\nPage 3 | Analytics\nThis page summarizes the experiment and shows the results visually.\nUsers can:\n\nidentify the current champion bandit,\ncompare posterior means,\ncompare clicks,\ninspect Beta posterior curves,\nview reward progression over time."
+  },
+  {
+    "objectID": "content/05_frontend.html#later-connecting-the-backend-with-the-frontend",
+    "href": "content/05_frontend.html#later-connecting-the-backend-with-the-frontend",
+    "title": "Intro to Streamlit",
+    "section": "Later: Connecting the Backend with the Frontend",
+    "text": "Later: Connecting the Backend with the Frontend\nThe current Streamlit app is a frontend-first prototype.\nAt the moment, the application logic is still local and state is managed inside the Streamlit layer.\nLater, the architecture will evolve so that:\n\nStreamlit becomes the UI layer,\nFastAPI becomes the backend service,\nPostgreSQL stores persistent data,\nand the frontend communicates with the backend using API requests."
+  },
+  {
+    "objectID": "content/05_frontend.html#summary",
+    "href": "content/05_frontend.html#summary",
+    "title": "Intro to Streamlit",
+    "section": "Summary",
+    "text": "Summary\nThe current Streamlit frontend already provides a strong MVP for the Bayesian Carousel Bandits project.\nIt includes:\n\na multi-page structure,\nreusable shared logic,\na full interaction workflow,\nand a visual analytics layer.\n\nThis prototype is important because it proves the product idea works from a user perspective.\nThe next stage will be to connect this frontend to a FastAPI backend and PostgreSQL database, turning the prototype into a complete full-stack product."
+  },
+  {
+    "objectID": "content/05_frontend.html#streamlit-frontend",
+    "href": "content/05_frontend.html#streamlit-frontend",
+    "title": "Intro to Streamlit",
+    "section": "",
+    "text": "The frontend of the project is built with Streamlit and organized as a multi-page application.\nIts role is to provide the user interface for:\n\ncreating carousel projects,\ninteracting with the carousel bandits,\nand analyzing the results visually.\n\nThe current version is an MVP prototype, which already demonstrates the main product flow. Later, this frontend will be connected to a backend API and a PostgreSQL database.\nLive App"
   }
 ]
