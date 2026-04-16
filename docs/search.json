@@ -810,5 +810,110 @@
     "title": "Intro to Streamlit",
     "section": "",
     "text": "The frontend of the project is built with Streamlit and organized as a multi-page application.\nIts role is to provide the user interface for:\n\ncreating carousel projects,\ninteracting with the carousel bandits,\nand analyzing the results visually.\n\nThe current version is an MVP prototype, which already demonstrates the main product flow. Later, this frontend will be connected to a backend API and a PostgreSQL database.\nLive App"
+  },
+  {
+    "objectID": "content/06_backend.html",
+    "href": "content/06_backend.html",
+    "title": "Intro to FastAPI",
+    "section": "",
+    "text": "At this stage, the backend is introduced as a single-file FastAPI prototype.\nThe goal is not yet full production integration. Instead, the goal is to define:\n\nthe API idea,\nthe request and response structure,\nthe main endpoints,\nand how the frontend will later communicate with the backend.\n\nThis first version uses dummy in-memory storage, which means the API works without PostgreSQL. Later, the same structure can evolve into a full backend connected to the database."
+  },
+  {
+    "objectID": "content/06_backend.html#overview",
+    "href": "content/06_backend.html#overview",
+    "title": "Intro to FastAPI",
+    "section": "Overview",
+    "text": "Overview\nFastAPI is a modern Python framework for building APIs.\nIt is a strong choice for this project because it provides:\n\nsimple endpoint creation,\nautomatic validation with Pydantic,\nautomatic API documentation,\nfast development for prototypes,\nand a clean path from MVP to production.\n\nFor our project, FastAPI will eventually sit between:\n\nthe Streamlit frontend,\nand the PostgreSQL database.\n\n\n\n\n\n\nflowchart TD\n    A[Streamlit Frontend] --&gt; B[FastAPI Backend]\n    B --&gt; C[PostgreSQL Database]"
+  },
+  {
+    "objectID": "content/06_backend.html#why-fastapi-for-this-project",
+    "href": "content/06_backend.html#why-fastapi-for-this-project",
+    "title": "Intro to FastAPI",
+    "section": "Why FastAPI for This Project",
+    "text": "Why FastAPI for This Project\nFastAPI is useful here because the product needs structured communication between frontend and backend.\nThe frontend will later need to send requests such as:\n\ncreate a carousel,\nfetch available carousels,\nfetch the current visible alternatives,\nsubmit click or no-click feedback,\nrequest analytics for a carousel,\nreset or delete a project.\n\nInstead of keeping this logic only inside Streamlit, FastAPI allows us to turn the product into a real service."
+  },
+  {
+    "objectID": "content/06_backend.html#what-this-prototype-backend-does",
+    "href": "content/06_backend.html#what-this-prototype-backend-does",
+    "title": "Intro to FastAPI",
+    "section": "What This Prototype Backend Does",
+    "text": "What This Prototype Backend Does\nThis first backend version is intentionally simple.\nIt includes:\n\none file only,\nall routes in one place,\ndummy in-memory storage,\nrequest and response models,\nand placeholder analytics logic.\n\nThis makes it easier to understand the API before splitting the project into:\n\nrouters,\nservices,\nschemas,\nand database layers."
+  },
+  {
+    "objectID": "content/06_backend.html#planned-api-endpoints",
+    "href": "content/06_backend.html#planned-api-endpoints",
+    "title": "Intro to FastAPI",
+    "section": "Planned API Endpoints",
+    "text": "Planned API Endpoints\nThe prototype backend includes the following requests.\n\nGeneral\n\nGET /\nGET /health\n\n\n\nCarousel Management\n\nGET /carousels\nPOST /carousels\nGET /carousels/{carousel_id}\nDELETE /carousels/{carousel_id}\nPOST /carousels/{carousel_id}/reset\n\n\n\nCarousel Interaction\n\nGET /carousels/{carousel_id}/display\nPOST /carousels/{carousel_id}/resample\nPOST /carousels/{carousel_id}/feedback\nGET /carousels/{carousel_id}/events\n\n\n\nAnalytics\n\nGET /carousels/{carousel_id}/analytics\n\n\n\n\n\n\nflowchart LR\n    A[Create Carousel] --&gt; B[Get Carousel]\n    B --&gt; C[Display Alternatives]\n    C --&gt; D[Submit Feedback]\n    D --&gt; E[Update Event History]\n    E --&gt; F[Request Analytics]"
+  },
+  {
+    "objectID": "content/06_backend.html#why-a-single-file-first",
+    "href": "content/06_backend.html#why-a-single-file-first",
+    "title": "Intro to FastAPI",
+    "section": "Why a Single File First",
+    "text": "Why a Single File First\nAt the prototype stage, keeping everything in one file is useful because it lets us focus on:\n\nthe request flow,\nthe endpoint names,\nthe payload design,\nand the frontend-backend interaction.\n\nLater, the same backend can be refactored into a more scalable structure.\nA future version may look like:\napp/backend/\n├── main.py\n├── routers/\n├── services/\n├── schemas/\n├── db/\n└── models/\nBut for now, one file is enough to validate the API design."
+  },
+  {
+    "objectID": "content/06_backend.html#request-and-response-design",
+    "href": "content/06_backend.html#request-and-response-design",
+    "title": "Intro to FastAPI",
+    "section": "Request and Response Design",
+    "text": "Request and Response Design\nFastAPI uses Pydantic models to validate requests and responses.\nFor example, when creating a carousel, the frontend should send:\n\na carousel name,\ntotal number of alternatives,\nvisible count.\n\nWhen submitting feedback, the frontend should send:\n\nthe selected carousel,\nand the clicked alternative id, or null for no click.\n\nThis makes the API predictable and safe."
+  },
+  {
+    "objectID": "content/06_backend.html#full-dummy-backend-in-one-file",
+    "href": "content/06_backend.html#full-dummy-backend-in-one-file",
+    "title": "Intro to FastAPI",
+    "section": "Full Dummy Backend in One File",
+    "text": "Full Dummy Backend in One File\nBelow is a simple one-file FastAPI backend that contains all the main prototype requests.\nfrom __future__ import annotations\n\nimport random\nimport uuid\nfrom datetime import datetime\nfrom typing import Any, Optional\n\nfrom fastapi import FastAPI, HTTPException\nfrom fastapi.middleware.cors import CORSMiddleware\nfrom pydantic import BaseModel, Field\n\n\napp = FastAPI(\n    title=\"Bayesian Carousel Bandits API\",\n    version=\"0.1.0\",\n    description=\"Single-file FastAPI backend for the Streamlit MVP.\",\n)\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\n\nCAROUSELS: dict[str, dict[str, Any]] = {}\nDEFAULT_ALPHA = 1.0\nDEFAULT_BETA = 1.0\n\n\nclass CarouselCreate(BaseModel):\n    name: str = Field(..., min_length=1, max_length=255)\n    total_alternatives: int = Field(..., ge=2, le=1000)\n    visible_count: int = Field(..., ge=1, le=100)\n\n\nclass FeedbackRequest(BaseModel):\n    clicked_alt_id: Optional[int] = None\n\n\nclass AlternativeOut(BaseModel):\n    alt_id: int\n    title: str\n    slot: int\n    alpha: float\n    beta: float\n    impressions: int\n    clicks: int\n    posterior_mean: float\n    empirical_ctr: float\n\n\nclass CarouselSummary(BaseModel):\n    carousel_id: str\n    name: str\n    total_alternatives: int\n    visible_count: int\n    created_at: str\n    round_number: int\n    total_impressions: int\n    total_clicks: int\n    average_reward: float\n\n\nclass EventOut(BaseModel):\n    timestamp: str\n    round: int\n    displayed: list[int]\n    clicked: Optional[int]\n    reward: int\n\n\nclass AnalyticsResponse(BaseModel):\n    carousel_id: str\n    name: str\n    rounds: int\n    total_impressions: int\n    total_clicks: int\n    average_reward: float\n    champion_alt_id: Optional[int]\n    champion_title: Optional[str]\n    alternatives: list[dict[str, Any]]\n    history: list[dict[str, Any]]\n\n\ndef now_str() -&gt; str:\n    return datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\n\n\ndef create_alternatives(total_alternatives: int) -&gt; list[dict[str, Any]]:\n    return [\n        {\n            \"alt_id\": i,\n            \"title\": f\"Alternative {i}\",\n            \"alpha\": DEFAULT_ALPHA,\n            \"beta\": DEFAULT_BETA,\n            \"impressions\": 0,\n            \"clicks\": 0,\n        }\n        for i in range(1, total_alternatives + 1)\n    ]\n\n\ndef get_carousel_or_404(carousel_id: str) -&gt; dict[str, Any]:\n    carousel = CAROUSELS.get(carousel_id)\n    if not carousel:\n        raise HTTPException(status_code=404, detail=\"Carousel not found\")\n    return carousel\n\n\ndef get_stats(carousel: dict[str, Any]) -&gt; list[dict[str, Any]]:\n    stats: list[dict[str, Any]] = []\n    for alt in carousel[\"alternatives\"]:\n        impressions = alt[\"impressions\"]\n        clicks = alt[\"clicks\"]\n        alpha = float(alt[\"alpha\"])\n        beta = float(alt[\"beta\"])\n        posterior_mean = alpha / (alpha + beta)\n        empirical_ctr = (clicks / impressions) if impressions &gt; 0 else 0.0\n\n        row = dict(alt)\n        row[\"posterior_mean\"] = posterior_mean\n        row[\"empirical_ctr\"] = empirical_ctr\n        stats.append(row)\n    return stats\n\n\ndef sample_carousel(carousel: dict[str, Any]) -&gt; list[int]:\n    sampled: list[tuple[int, float]] = []\n    for alt in carousel[\"alternatives\"]:\n        theta = random.betavariate(float(alt[\"alpha\"]), float(alt[\"beta\"]))\n        sampled.append((int(alt[\"alt_id\"]), theta))\n\n    sampled.sort(key=lambda x: x[1], reverse=True)\n    chosen = [alt_id for alt_id, _ in sampled[: carousel[\"visible_count\"]]]\n    carousel[\"current_display_ids\"] = chosen\n    return chosen\n\n\ndef current_display(carousel: dict[str, Any]) -&gt; list[dict[str, Any]]:\n    if not carousel[\"current_display_ids\"]:\n        sample_carousel(carousel)\n\n    ids = carousel[\"current_display_ids\"]\n    stats = get_stats(carousel)\n    selected = [row for row in stats if row[\"alt_id\"] in ids]\n    selected.sort(key=lambda row: ids.index(row[\"alt_id\"]))\n\n    out: list[dict[str, Any]] = []\n    for idx, row in enumerate(selected, start=1):\n        item = dict(row)\n        item[\"slot\"] = idx\n        out.append(item)\n    return out\n\n\ndef update_after_feedback(carousel: dict[str, Any], clicked_alt_id: Optional[int]) -&gt; dict[str, Any]:\n    displayed_ids = list(carousel[\"current_display_ids\"])\n    if not displayed_ids:\n        displayed_ids = sample_carousel(carousel)\n\n    found_clicked = False\n\n    for alt in carousel[\"alternatives\"]:\n        if alt[\"alt_id\"] in displayed_ids:\n            alt[\"impressions\"] += 1\n            if clicked_alt_id is not None and alt[\"alt_id\"] == clicked_alt_id:\n                alt[\"alpha\"] += 1\n                alt[\"clicks\"] += 1\n                found_clicked = True\n            else:\n                alt[\"beta\"] += 1\n\n    if clicked_alt_id is not None and not found_clicked:\n        raise HTTPException(status_code=400, detail=\"Clicked alternative is not in the current display\")\n\n    event = {\n        \"timestamp\": now_str(),\n        \"round\": carousel[\"round_number\"],\n        \"displayed\": displayed_ids,\n        \"clicked\": clicked_alt_id,\n        \"reward\": 1 if clicked_alt_id is not None else 0,\n    }\n    carousel[\"history\"].append(event)\n    carousel[\"round_number\"] += 1\n    sample_carousel(carousel)\n    return event\n\n\ndef build_summary(carousel: dict[str, Any]) -&gt; dict[str, Any]:\n    stats = get_stats(carousel)\n    total_impressions = sum(row[\"impressions\"] for row in stats)\n    total_clicks = sum(row[\"clicks\"] for row in stats)\n    average_reward = (total_clicks / total_impressions) if total_impressions else 0.0\n\n    return {\n        \"carousel_id\": carousel[\"carousel_id\"],\n        \"name\": carousel[\"name\"],\n        \"total_alternatives\": carousel[\"total_alternatives\"],\n        \"visible_count\": carousel[\"visible_count\"],\n        \"created_at\": carousel[\"created_at\"],\n        \"round_number\": carousel[\"round_number\"],\n        \"total_impressions\": total_impressions,\n        \"total_clicks\": total_clicks,\n        \"average_reward\": average_reward,\n    }\n\n\ndef get_champion(stats: list[dict[str, Any]]) -&gt; tuple[Optional[int], Optional[str]]:\n    if not stats:\n        return None, None\n    champion = max(stats, key=lambda row: row[\"posterior_mean\"])\n    return champion[\"alt_id\"], champion[\"title\"]\n\n\n@app.get(\"/\")\ndef root() -&gt; dict[str, str]:\n    return {\"message\": \"Bayesian Carousel Bandits API is running\"}\n\n\n@app.get(\"/health\")\ndef health() -&gt; dict[str, str]:\n    return {\"status\": \"ok\"}\n\n\n@app.get(\"/carousels\", response_model=list[CarouselSummary])\ndef list_carousels() -&gt; list[dict[str, Any]]:\n    return [build_summary(carousel) for carousel in CAROUSELS.values()]\n\n\n@app.post(\"/carousels\", response_model=CarouselSummary)\ndef create_carousel(payload: CarouselCreate) -&gt; dict[str, Any]:\n    if payload.visible_count &gt; payload.total_alternatives:\n        raise HTTPException(\n            status_code=400,\n            detail=\"visible_count cannot be greater than total_alternatives\",\n        )\n\n    carousel_id = str(uuid.uuid4())[:8]\n    carousel = {\n        \"carousel_id\": carousel_id,\n        \"name\": payload.name,\n        \"total_alternatives\": payload.total_alternatives,\n        \"visible_count\": payload.visible_count,\n        \"created_at\": now_str(),\n        \"round_number\": 1,\n        \"alternatives\": create_alternatives(payload.total_alternatives),\n        \"history\": [],\n        \"current_display_ids\": [],\n    }\n\n    sample_carousel(carousel)\n    CAROUSELS[carousel_id] = carousel\n    return build_summary(carousel)\n\n\n@app.get(\"/carousels/{carousel_id}\")\ndef get_carousel(carousel_id: str) -&gt; dict[str, Any]:\n    carousel = get_carousel_or_404(carousel_id)\n    return {\n        \"carousel_id\": carousel[\"carousel_id\"],\n        \"name\": carousel[\"name\"],\n        \"total_alternatives\": carousel[\"total_alternatives\"],\n        \"visible_count\": carousel[\"visible_count\"],\n        \"created_at\": carousel[\"created_at\"],\n        \"round_number\": carousel[\"round_number\"],\n        \"alternatives\": get_stats(carousel),\n        \"history_count\": len(carousel[\"history\"]),\n    }\n\n\n@app.delete(\"/carousels/{carousel_id}\")\ndef delete_carousel(carousel_id: str) -&gt; dict[str, str]:\n    get_carousel_or_404(carousel_id)\n    del CAROUSELS[carousel_id]\n    return {\"message\": \"Carousel deleted successfully\"}\n\n\n@app.post(\"/carousels/{carousel_id}/reset\")\ndef reset_carousel(carousel_id: str) -&gt; dict[str, str]:\n    carousel = get_carousel_or_404(carousel_id)\n    carousel[\"alternatives\"] = create_alternatives(carousel[\"total_alternatives\"])\n    carousel[\"history\"] = []\n    carousel[\"current_display_ids\"] = []\n    carousel[\"round_number\"] = 1\n    sample_carousel(carousel)\n    return {\"message\": \"Carousel reset successfully\"}\n\n\n@app.get(\"/carousels/{carousel_id}/display\", response_model=list[AlternativeOut])\ndef get_display(carousel_id: str) -&gt; list[dict[str, Any]]:\n    carousel = get_carousel_or_404(carousel_id)\n    return current_display(carousel)\n\n\n@app.post(\"/carousels/{carousel_id}/resample\", response_model=list[AlternativeOut])\ndef resample_display(carousel_id: str) -&gt; list[dict[str, Any]]:\n    carousel = get_carousel_or_404(carousel_id)\n    sample_carousel(carousel)\n    return current_display(carousel)\n\n\n@app.post(\"/carousels/{carousel_id}/feedback\", response_model=EventOut)\ndef submit_feedback(carousel_id: str, payload: FeedbackRequest) -&gt; dict[str, Any]:\n    carousel = get_carousel_or_404(carousel_id)\n    return update_after_feedback(carousel, payload.clicked_alt_id)\n\n\n@app.get(\"/carousels/{carousel_id}/events\", response_model=list[EventOut])\ndef get_events(carousel_id: str) -&gt; list[dict[str, Any]]:\n    carousel = get_carousel_or_404(carousel_id)\n    return carousel[\"history\"]\n\n\n@app.get(\"/carousels/{carousel_id}/analytics\", response_model=AnalyticsResponse)\ndef get_analytics(carousel_id: str) -&gt; dict[str, Any]:\n    carousel = get_carousel_or_404(carousel_id)\n    stats = get_stats(carousel)\n    stats_sorted = sorted(stats, key=lambda row: row[\"posterior_mean\"], reverse=True)\n\n    champion_alt_id, champion_title = get_champion(stats_sorted)\n\n    total_impressions = sum(row[\"impressions\"] for row in stats_sorted)\n    total_clicks = sum(row[\"clicks\"] for row in stats_sorted)\n    average_reward = (total_clicks / total_impressions) if total_impressions else 0.0\n\n    return {\n        \"carousel_id\": carousel[\"carousel_id\"],\n        \"name\": carousel[\"name\"],\n        \"rounds\": max(carousel[\"round_number\"] - 1, 0),\n        \"total_impressions\": total_impressions,\n        \"total_clicks\": total_clicks,\n        \"average_reward\": average_reward,\n        \"champion_alt_id\": champion_alt_id,\n        \"champion_title\": champion_title,\n        \"alternatives\": stats_sorted,\n        \"history\": carousel[\"history\"],\n    }"
+  },
+  {
+    "objectID": "content/06_backend.html#how-to-run-the-prototype-backend",
+    "href": "content/06_backend.html#how-to-run-the-prototype-backend",
+    "title": "Intro to FastAPI",
+    "section": "How to Run the Prototype Backend",
+    "text": "How to Run the Prototype Backend\nSave the file as:\napp/back/main.py\nThen run:\nuvicorn main:app --reload\nThe API will usually be available at:\nhttp://localhost:8000\nThe automatic FastAPI documentation will be available at:\nhttp://localhost:8000/docs"
+  },
+  {
+    "objectID": "content/06_backend.html#how-the-frontend-will-use-these-requests-later",
+    "href": "content/06_backend.html#how-the-frontend-will-use-these-requests-later",
+    "title": "Intro to FastAPI",
+    "section": "How the Frontend Will Use These Requests Later",
+    "text": "How the Frontend Will Use These Requests Later\nLater, the Streamlit frontend will call these endpoints.\nFor example:\n\nthe Create Carousels page will call POST /carousels\nthe Interaction page will call GET /carousels/{carousel_id}/display\nfeedback buttons will call POST /carousels/{carousel_id}/feedback\nthe Analytics page will call GET /carousels/{carousel_id}/analytics\n\nThis means the frontend can stay focused on UI while FastAPI handles the application logic."
+  },
+  {
+    "objectID": "content/06_backend.html#example-backend-flow",
+    "href": "content/06_backend.html#example-backend-flow",
+    "title": "Intro to FastAPI",
+    "section": "Example Backend Flow",
+    "text": "Example Backend Flow\nA simple interaction flow is:\n\ncreate a carousel\nfetch the currently displayed alternatives\nsubmit click feedback\nrequest updated analytics\n\n\n\n\n\n\nsequenceDiagram\n    participant F as Frontend\n    participant B as FastAPI\n\n    F-&gt;&gt;B: POST /carousels\n    B--&gt;&gt;F: carousel_id\n\n    F-&gt;&gt;B: GET /carousels/{id}/display\n    B--&gt;&gt;F: visible alternatives\n\n    F-&gt;&gt;B: POST /carousels/{id}/feedback\n    B--&gt;&gt;F: event result\n\n    F-&gt;&gt;B: GET /carousels/{id}/analytics\n    B--&gt;&gt;F: updated metrics"
+  },
+  {
+    "objectID": "content/06_backend.html#why-this-prototype-matters",
+    "href": "content/06_backend.html#why-this-prototype-matters",
+    "title": "Intro to FastAPI",
+    "section": "Why This Prototype Matters",
+    "text": "Why This Prototype Matters\nThis backend version is useful because it already defines:\n\nthe API structure,\nthe request names,\nthe request payloads,\nthe expected responses,\nand the future frontend-backend contract.\n\nEven though it is still dummy and in-memory, it is a strong first step toward the full implementation."
+  },
+  {
+    "objectID": "content/06_backend.html#later-evolution",
+    "href": "content/06_backend.html#later-evolution",
+    "title": "Intro to FastAPI",
+    "section": "Later Evolution",
+    "text": "Later Evolution\nLater, this prototype backend can evolve into a real full-stack backend by adding:\n\nPostgreSQL persistence,\nSQLAlchemy models,\nrouters,\nservice layers,\ndatabase sessions,\nand proper business logic separation.\n\nAt that point, the same endpoints can remain, but their internal implementation will become production-style.\n\n\n\n\n\nflowchart LR\n    A[Single File FastAPI Prototype] --&gt; B[Modular Routers]\n    B --&gt; C[Database Integration]\n    C --&gt; D[Production Backend]"
+  },
+  {
+    "objectID": "content/06_backend.html#summary",
+    "href": "content/06_backend.html#summary",
+    "title": "Intro to FastAPI",
+    "section": "Summary",
+    "text": "Summary\nThis FastAPI prototype provides a clean backend introduction for the project.\nIt includes:\n\none-file setup,\nall main dummy requests,\nrequest and response models,\ninteraction flow,\nand a clear path for later full implementation.\n\nThis is the right stage for learning how the backend should work before moving into database-connected production code."
+  },
+  {
+    "objectID": "content/06_backend.html#fastapi-backend",
+    "href": "content/06_backend.html#fastapi-backend",
+    "title": "Intro to FastAPI",
+    "section": "",
+    "text": "At this stage, the backend is introduced as a single-file FastAPI prototype.\nThe goal is not yet full production integration. Instead, the goal is to define:\n\nthe API idea,\nthe request and response structure,\nthe main endpoints,\nand how the frontend will later communicate with the backend.\n\nThis first version uses dummy in-memory storage, which means the API works without PostgreSQL. Later, the same structure can evolve into a full backend connected to the database."
   }
 ]
