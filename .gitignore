@@ -1,4 +1,4 @@
-
+backend
 .vscode
 pgadmin_data/
 postgres_data/
@@ -221,3 +221,4 @@ __marimo__/
 **/*.quarto_ipynb
 
 tasks
+
