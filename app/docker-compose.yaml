@@ -46,4 +46,36 @@ services:
         condition: service_healthy
     healthcheck:
       test: "exit 0"
+
+  backend:
+    container_name: bandit_backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: always
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@db:5432/${DB_NAME}
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      db:
+        condition: service_healthy
   
+  frontend:
+    container_name: streamlit_frontend
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8501:8501
+    env_file:
+      - .env
+    volumes:
+      - ./front:/app
+    depends_on:
+      - backend

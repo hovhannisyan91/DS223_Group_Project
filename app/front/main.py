@@ -6,7 +6,7 @@ from bandit_utils import init_state
 
 st.set_page_config(
     page_title="Bayesian Carousel Bandits",
-    page_icon="🎯",
+    page_icon="",
     layout="wide",
 )
 

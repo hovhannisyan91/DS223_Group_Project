@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "bandit-backend"
+name = "backend"
 version = "0.1.0"
 description = "Backend for Bayesian Bandit Carousel System"
 requires-python = ">=3.9"

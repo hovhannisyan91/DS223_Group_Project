@@ -9,11 +9,8 @@ from typing import Dict, Optional
 import numpy as np
 import pandas as pd
 import streamlit as st
+from scipy.stats import beta as scipy_beta
 
-try:
-    from scipy.stats import beta as scipy_beta
-except ImportError:
-    scipy_beta = None
 
 DEFAULT_ALPHA = 1
 DEFAULT_BETA = 1
