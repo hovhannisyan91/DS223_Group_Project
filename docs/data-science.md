@@ -10,3 +10,12 @@ The data science module lives in `app/ds/`.
 
 This module should contain modeling, evaluation, or decision logic that supports the product workflow.
 
+## API Reference
+
+### Main
+
+**Module:** `app.ds.main`
+
+Defines the data science module entrypoint.
+
+::: app.ds.main
