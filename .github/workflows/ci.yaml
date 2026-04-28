@@ -36,6 +36,17 @@ jobs:
           pip install mkdocs-material
           pip install "mkdocstrings[python]"
           pip install pillow cairosvg
+
+      - name: Prepare MkDocs source
+        run: |
+          rm -rf mkdocs_docs
+          mkdir -p mkdocs_docs/content
+          rsync -a --exclude ".DS_Store" tutorial/img/ mkdocs_docs/img/
+          cp tutorial/index.qmd mkdocs_docs/index.md
+          for file in tutorial/content/*.qmd; do
+            cp "$file" "mkdocs_docs/content/$(basename "$file" .qmd).md"
+          done
+
       - name: Build MkDocs site
         run: mkdocs build        
       - name: Deploy mkdocs

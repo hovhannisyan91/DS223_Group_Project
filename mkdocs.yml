@@ -1,0 +1,30 @@
+site_name: DS223 Group Project
+site_url: https://hovhannisyan91.github.io/DS223_Group_Project/
+repo_url: https://github.com/hovhannisyan91/DS223_Group_Project
+
+docs_dir: mkdocs_docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Product: content/01_problem_definition.md
+  - Docker: content/02_docker.md
+  - Git: content/03_git.md
+  - Database | PostgreSQL: content/04_database.md
+  - Frontend | Streamlit: content/05_frontend.md
+  - Backend | FastAPI: content/06_backend.md
+  - Documentation | MkDocs: content/07_documentation.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
