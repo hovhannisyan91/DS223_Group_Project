@@ -12,3 +12,6 @@ The ETL code lives in `app/etl/`.
 
 The ETL layer prepares data for the application database and keeps database setup logic separate from the backend API.
 
+## API Reference
+
+::: app.etl.etl
