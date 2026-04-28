@@ -17,13 +17,16 @@ slides/.quarto
 *.so
 
 
-tutorial/
+docs/
+tutorial/.quarto/
+tutorial/_site/
+tutorial/.DS_Store
+tutorial/img/.DS_Store
 # Distribution / packaging
 .Python
 build/
 develop-eggs/
 dist/
-!docs/site_libs/revealjs/dist
 downloads/
 eggs/
 .eggs/

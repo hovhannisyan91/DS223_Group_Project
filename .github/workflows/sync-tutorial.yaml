@@ -1,0 +1,63 @@
+name: Sync tutorial to Quarto repository
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - "tutorial/**"
+      - ".github/workflows/sync-tutorial.yaml"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate target configuration
+        env:
+          TARGET_REPOSITORY: ${{ vars.TUTORIAL_TARGET_REPOSITORY }}
+          TARGET_TOKEN: ${{ secrets.TUTORIAL_REPO_PAT }}
+        run: |
+          if [ -z "$TARGET_REPOSITORY" ]; then
+            echo "Set repository variable TUTORIAL_TARGET_REPOSITORY to owner/repo."
+            exit 1
+          fi
+
+          if [ -z "$TARGET_TOKEN" ]; then
+            echo "Set secret TUTORIAL_REPO_PAT to a token that can push to the target repository."
+            exit 1
+          fi
+
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.TUTORIAL_TARGET_REPOSITORY }}
+          token: ${{ secrets.TUTORIAL_REPO_PAT }}
+          path: target
+
+      - name: Sync tutorial into target repository root
+        run: |
+          rsync -av --delete \
+            --exclude ".git/" \
+            --exclude ".quarto/" \
+            --exclude ".DS_Store" \
+            tutorial/ \
+            target/
+
+      - name: Commit and push if changed
+        env:
+          TARGET_REPOSITORY: ${{ vars.TUTORIAL_TARGET_REPOSITORY }}
+          TARGET_TOKEN: ${{ secrets.TUTORIAL_REPO_PAT }}
+        run: |
+          cd target
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Sync tutorial from DS223 project repo"
+          git remote set-url origin "https://${TARGET_TOKEN}@github.com/${TARGET_REPOSITORY}.git"
+          git push origin HEAD:main

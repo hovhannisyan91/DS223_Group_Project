@@ -90,6 +90,7 @@ format:
 ## Tools
 
 
+
 You are going to use  *Github Projects*. Throughout the lectures/sessions you will learn more.
  
 
@@ -216,13 +217,13 @@ Group Project Grade will be allocated to milestones, with the below weights:
 1. Problem Definition (you can learn more about it  [here](https://docs.google.com/document/d/1uUp4Kpduj768tGjAxXGiGrUesQiYIenQoSLlVpRHqpA/edit?usp=drive_link))
 2. Finalizing roles [here](https://docs.google.com/spreadsheets/d/1TyMjzzwjN9CZi7VKYZqxUSrDiOfUeaLpuWlcDpUZ8jk/edit#gid=0)
 3. Schedule a call/meeting with me and Artur
-4. Find your Repository and join
-5. Create a product roadmap and prioritized functionality (items)
-6. Join the respecitve Repository in the Github Organization (you will be invited to join the organization, please accept the invitation and join the repository) ^[A footnote]
-7. Push *point 1, point 4, point 6 (requirements.txt).*
-8. Prototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)
-9. Create a private Slack channel in **OUR** Workspace and name it **Group {number}**
-10. Install VsCode (also install Project Manager extension)
+4. Create a product roadmap and prioritized functionality (items)
+5. Join the respecitve Repository in the Github Organization (you will be invited to join the organization, please accept the invitation and join the repository) ^[A footnote]
+6. Prototype/Flowchart the UI using ChatGPT or any other tool (Figma, Miro, etc.)
+7. Push *point 1, point 4, point 6.*
+8. Create a private Slack channel in **OUR** Workspace and name it **Group {number}**
+9. Make sure to have `pdf` and image formats: no `docx` 
+
 
 :::
 
@@ -286,7 +287,7 @@ Group Project Grade will be allocated to milestones, with the below weights:
 ## Docker Files {.smaller}
 
 ```yaml
-FROM python:3.10-slim-bullseye
+FROM python:3.12-slim-bullseye
 
 RUN apt-get update && apt-get install -y \
     build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
