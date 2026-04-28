@@ -1,24 +1,16 @@
 # DS223 Group Project
 
-This documentation describes the project repository, application components, and deployment workflow.
+This project demonstrates a Python microservice design for a marketing analytics application.
 
-The Quarto course tutorial is maintained separately under `tutorial/` and is published at:
+## How It Works
 
-[Open tutorial](tutorial/)
+[Open the end-to-end Quarto tutorial](tutorial/)
 
-## Repository Layout
+## Services
 
-- `app/backend/`: FastAPI service and database API.
-- `app/front/`: Streamlit frontend.
-- `app/etl/`: database setup and ETL utilities.
-- `app/ds/`: data science module.
-- `docs/`: MkDocs documentation source.
-- `tutorial/`: Quarto tutorial source.
-
-## Deployment
-
-GitHub Actions builds two outputs:
-
-- MkDocs from `docs/` to the site root.
-- Quarto from `tutorial/` to `/tutorial/`.
+- `Database`: PostgreSQL database for carousels, alternatives, and interaction events.
+- `API`: FastAPI backend that exposes application endpoints.
+- `App`: Streamlit frontend that interacts with the API.
+- `ETL`: Python utilities for database setup and data loading.
+- `Docs`: MkDocs documentation generated from Markdown and Python docstrings.
 

@@ -34,11 +34,11 @@ theme:
 
 nav:
   - Home: index.md
-  - Backend: backend.md
-  - Frontend: frontend.md
+  - Demo: demo.md
   - ETL: etl.md
-  - Data Science: data-science.md
-  - Deployment: deployment.md
+  - API: api.md
+  - APP: app.md
+  - API models: api_models.md
   - Tutorial: https://hovhannisyan91.github.io/DS223_Group_Project/tutorial/
 
 markdown_extensions:
