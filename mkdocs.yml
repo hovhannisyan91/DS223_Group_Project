@@ -21,6 +21,7 @@ nav:
   - Frontend | Streamlit: content/05_frontend.md
   - Backend | FastAPI: content/06_backend.md
   - Documentation | MkDocs: content/07_documentation.md
+  - Quarto Tutorial: tutorial/
 
 markdown_extensions:
   - admonition
