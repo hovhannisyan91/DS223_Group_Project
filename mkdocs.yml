@@ -38,6 +38,7 @@ nav:
   - Frontend: frontend.md
   - ETL: etl.md
   - Data Science: data-science.md
+  - API: api.md
   - Deployment: deployment.md
   - Tutorial: https://hovhannisyan91.github.io/DS223_Group_Project/tutorial/
 
