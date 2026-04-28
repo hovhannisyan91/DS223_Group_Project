@@ -34,13 +34,11 @@ theme:
 
 nav:
   - Home: index.md
-  - Product: content/01_problem_definition.md
-  - Docker: content/02_docker.md
-  - Git: content/03_git.md
-  - Database | PostgreSQL: content/04_database.md
-  - Frontend | Streamlit: content/05_frontend.md
-  - Backend | FastAPI: content/06_backend.md
-  - Documentation | MkDocs: content/07_documentation.md
+  - Backend: backend.md
+  - Frontend: frontend.md
+  - ETL: etl.md
+  - Data Science: data-science.md
+  - Deployment: deployment.md
   - Tutorial: https://hovhannisyan91.github.io/DS223_Group_Project/tutorial/
 
 markdown_extensions:
