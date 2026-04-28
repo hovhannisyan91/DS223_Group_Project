@@ -48,10 +48,38 @@ jobs:
           rm -rf mkdocs_docs
           mkdir -p mkdocs_docs/content
           rsync -a --exclude ".DS_Store" tutorial/img/ mkdocs_docs/img/
-          cp tutorial/index.qmd mkdocs_docs/index.md
-          for file in tutorial/content/*.qmd; do
-            cp "$file" "mkdocs_docs/content/$(basename "$file" .qmd).md"
-          done
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def convert(src: Path, dst: Path) -> None:
+              text = src.read_text()
+              image_path = None
+              if text.startswith("---\n"):
+                  _, frontmatter, body = text.split("---\n", 2)
+                  for line in frontmatter.splitlines():
+                      if line.strip().startswith("image_path:"):
+                          image_path = line.split(":", 1)[1].strip().strip('"').strip("'")
+                  text = f"---\n{frontmatter}---\n{body}"
+
+              if image_path:
+                  text = text.replace("{{< meta image_path >}}", image_path)
+
+              # MkDocs + mkdocstrings treats ":::" blocks as Python API directives.
+              # Strip Quarto callout container markers before building MkDocs.
+              lines = []
+              for line in text.splitlines():
+                  if re.match(r"^:::\s*\{.*\}\s*$", line):
+                      continue
+                  if re.match(r"^:::\s*$", line):
+                      continue
+                  lines.append(line)
+              dst.write_text("\n".join(lines) + "\n")
+
+          convert(Path("tutorial/index.qmd"), Path("mkdocs_docs/index.md"))
+          for src in sorted(Path("tutorial/content").glob("*.qmd")):
+              convert(src, Path("mkdocs_docs/content") / f"{src.stem}.md")
+          PY
 
       - name: Build MkDocs site
         run: mkdocs build
