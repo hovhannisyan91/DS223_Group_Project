@@ -1,7 +1,9 @@
-backend
-app/backend/
 app/etl/*
+!app/etl/__init__.py
 !app/etl/etl.py
+!app/etl/create_tables.py
+!app/etl/Database/
+!app/etl/Database/*.py
 .vscode
 pgadmin_data/
 postgres_data/
