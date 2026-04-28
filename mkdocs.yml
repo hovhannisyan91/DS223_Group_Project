@@ -2,7 +2,7 @@ site_name: DS223 Group Project
 site_url: https://hovhannisyan91.github.io/DS223_Group_Project/
 repo_url: https://github.com/hovhannisyan91/DS223_Group_Project
 
-docs_dir: mkdocs_docs
+docs_dir: docs
 site_dir: site
 
 theme:

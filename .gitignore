@@ -17,10 +17,8 @@ slides/.quarto
 *.so
 
 
-docs/
-mkdocs_docs/
 tutorial/.quarto/
-tutorial/_site/
+tutorial/docs/
 tutorial/.DS_Store
 tutorial/img/.DS_Store
 # Distribution / packaging
